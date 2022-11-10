@@ -12,7 +12,7 @@
 #lnb .depth_02 {display:none;border-style: solid; border-color: #aaa; border-width:1px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;}
 #lnb .depth_02 li+li {border-top: 1px solid #aaa;}
 #lnb .depth_02 li a {position:relative;display:block; background: #f6f6f6;padding:17px 20px 17px;font-size:18px;color:#333;}
-#lnb .depth_01 .anchor::before {content:'';position:absolute;top:50%;right:20px;transform:translateY(-50%);transform-origin:center;display:block;width:18px;height:11px;background:url(page/common/images/sp_injae.png) -458px -24px no-repeat;}
+#lnb .depth_01 .anchor::before {content:'';position:absolute;top:50%;right:20px;transform:translateY(-50%);transform-origin:center;display:block;width:18px;height:11px;background:url(/page/common/images/sp_injae.png) -458px -24px no-repeat;}
 #lnb .depth_01 .anchor.on::before {background-position:-458px -10px;}
 #lnb .depth_02 li:last-child a {display:block; background: #f6f6f6;border-bottom-left-radius:10px;border-bottom-right-radius:10px;}
 #lnb .depth_01>li>a.on {background:#26498c;color:#fff;border: 1px solid #26498c;border-bottom-left-radius:0;border-bottom-right-radius:0;}
@@ -36,17 +36,17 @@
 .top_box .route {float:left;}
 .top_box .route a {position:relative;display:inline-block;color:#666;font-size:16px;font-weight:400;transition:all .1s;margin-right:16px;padding-left:24px;line-height:1.25;}
 .top_box .route a + a::before {content:'';position:absolute;top:50%;transform: translateY(-50%);left:0;background: url(/page/common/images/ico-arrow-gray.png) no-repeat 0 0; height:7px;width:6px;}
-.top_box .route a.home { width:20px;height:20px;background:url(/page/images/common/sp_injae.png) no-repeat -10px -10px;text-indent:-9999px;margin-top:2px;padding-left:0;overflow:visible;}
+.top_box .route a.home { width:20px;height:20px;background:url(/page/gangwoninjae/images/common/sp_injae.png) no-repeat -10px -10px;text-indent:-9999px;margin-top:2px;padding-left:0;overflow:visible;}
 .top_box .route a:last-child {color:#111;font-weight:700;}
 
 /* btn-box: print, share button style*/
 .top_box .btn_box {float:right;}
 .top_box .btn_box .print,
 .top_box .btn_box .share .open {display:inline-block;width:20px;height:20px;text-indent:-9999px;}
-.top_box .btn_box .print {position:relative;background:url(/page/images/common/sp_injae.png) -110px -10px no-repeat;margin-left:36px;}
+.top_box .btn_box .print {position:relative;background:url(/page/gangwoninjae/images/common/sp_injae.png) -110px -10px no-repeat;margin-left:36px;}
 .top_box .btn_box .print::before {content:"";position:absolute;top:0;left:-20px;width:1px;height:20px;background:#ccc;}
 .top_box .btn_box .share {position: relative;display:inline-block;}
-.top_box .btn_box .share .open{background:url(/page/images/common/sp_injae.png) -60px -10px no-repeat;}
+.top_box .btn_box .share .open{background:url(/page/gangwoninjae/images/common/sp_injae.png) -60px -10px no-repeat;}
 .top_box .btn_box .share .open:active{transform:scale(.95);}
 
 /* share : share sns list style */
@@ -141,8 +141,8 @@
 #sub .imptBox{color:#666;background:#f5f5f5;font-size:14px;padding:30px 34px;}
 
 /*l listLv : list level style */
-.titLv2:before {top:9px;left:0px;background:url(/page/images/common/sp_injae.png) -270px -11px no-repeat;width:15px;height:15px;}
-.titLv3:before {top:6px;left:29px;background:url(/page/images/common/sp_injae.png) -314px -11px no-repeat;width:4px;height:18px;border-radius:0;}
+.titLv2:before {top:9px;left:0px;background:url(/page/gangwoninjae/images/common/sp_injae.png) -270px -11px no-repeat;width:15px;height:15px;}
+.titLv3:before {top:6px;left:29px;background:url(/page/gangwoninjae/images/common/sp_injae.png) -314px -11px no-repeat;width:4px;height:18px;border-radius:0;}
 
 .skinTb .listLv li:before {top:12px;height:1px;}
 p.listLv, div.listLv, span.listLv, .listLv >li, .listLv >dt, .listLv >dd,
@@ -150,7 +150,7 @@ p.listLv2, div.listLv2, span.listLv2, .listLv2 >li, .listLv2 >dt, .listLv2 >dd,
 p.listLv3, div.listLv3, span.listLv3, .listLv3 >li, .listLv3 >dt { padding-left: 15px;}
 
 p.listLv:before, div.listLv:before, span.listLv:before, .listLv >li:before, .listLv >dt:before {top:16px;left:0;width:7px;height:7px;border-radius:50%;border:0;background:#333;transform:rotate(0deg);border:0;}
-p.listLv2:before, div.listLv2:before, span.listLv2:before, .listLv2 >li:before, .listLv2 >dt:before {top: 8px;width:7px;height:9px;background: url(/page/images/common/sp_injae.png) -196px -16px no-repeat;}
+p.listLv2:before, div.listLv2:before, span.listLv2:before, .listLv2 >li:before, .listLv2 >dt:before {top: 8px;width:7px;height:9px;background: url(/page/gangwoninjae/images/common/sp_injae.png) -196px -16px no-repeat;}
 p.listLv3:before, div.listLv3:before, span.listLv3:before, .listLv3  >li:before, .listLv3 >dt:before {width:7px;height:1px;background:#333;}
 p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, .listLv4 >dt:before {background:#888;}
 
@@ -186,7 +186,7 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 .process_list li >div::after{content:''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: calc(100% - 15px); height: calc(100% - 15px); border-radius: 50%; border: 1px solid #ccc;}
 .process_list li >div>div{ display:block;line-height:1.5;position:absolute;top:50%;left:0;width:100%;padding:0 15px;transform:translateY(-50%);text-align:center;}
 .process_list li >div>div span{display:block;line-height:1;}
-.process_list li >div>div span:first-child{font-size:24px;font-weight:400;margin-bottom:9px;}
+.process_list li >div>div span:first-child{font-size:24px;font-weight:400;margin-bottfom:9px;}
 .process_list li >div>div span:last-child{font-size:30px;font-weight:700;}
 .process_list li p{line-height:1.4;color:#333;font-weight:300;margin-top:12px;text-align:center;font-size:16px;}
 
@@ -234,7 +234,7 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 .injae .skinBtnBo {border-color:#26498c;color:#26498c;}
 .injae .skinBtnBo:before{background:#26498c}
 
-.contsBtn > a:after{background:url(/page/images/common/sp_injae.png) 0 0 no-repeat;}
+.contsBtn > a:after{background:url(/page/gangwoninjae/images/common/sp_injae.png) 0 0 no-repeat;}
 #sub .skinBtnBo:hover,
 #sub .contsBtn:hover {color:#fff;}
 #sub .contsBtn > a.contsBtn-download:after{background-position:-10px -90px;right:20px;margin-top:-8px;}
@@ -313,9 +313,9 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 #sub .icoSecret{width:16px;}
 #sub .icoComment{width:20px;}
 #sub .icoNew{width:20px;}
-#sub .popLy-btnMore {width:18px;height:22px;background:url(./../images/common/sp_injae.png)-340px -46px no-repeat;}
+#sub .popLy-btnMore {width:18px;height:22px;background:url(/page/gangwoninjae/images/common/sp_injae.png)-340px -46px no-repeat;}
 
-#sub .icoFile {display: inline-block;width: 28px;height: 28px;margin-right:4px;vertical-align: middle;background:url(/page/images/common/sp_injae.png) no-repeat;margin-left:7px;}
+#sub .icoFile {display: inline-block;width: 28px;height: 28px;margin-right:4px;vertical-align: middle;background:url(/page/gangwoninjae/images/common/sp_injae.png) no-repeat;margin-left:7px;}
 #sub .icoFile-data-hwp {background-position: -40px -46px;}
 #sub .icoFile-data-doc {background-position: -73px -46px;}
 #sub .icoFile-data-jpg {background-position: -106px -46px;}
