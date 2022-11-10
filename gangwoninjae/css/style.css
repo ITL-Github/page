@@ -157,7 +157,7 @@ main{display:block;}
   }
 
 
-  #btn_top{position:absolute;top:750px;left:50%;margin-left:680px;display:block;z-index:1101;transition:opacity .1s;opacity:0;background:url(/page/gangwoninjae/images/common/ico-top-btn.png) 50% 50% no-repeat;background-size:cover;width:63px;height:63px;font-size:0;image-rendering:-webkit-optimize-contrast;}
+  #btn_top{position:absolute;top:820px;left:50%;margin-left:750px;display:block;z-index:1101;transition:opacity .1s;opacity:0;background:url(/page/gangwoninjae/images/common/ico-top-btn.png) 50% 50% no-repeat;background-size:cover;width:63px;height:63px;font-size:0;image-rendering:-webkit-optimize-contrast;}
   #btn_top:hover{transform:scale(1.03);}
   #btn_top:active{transform:scale(.97);}
 
