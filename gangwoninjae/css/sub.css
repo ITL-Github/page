@@ -18,7 +18,7 @@
 #lnb .depth_01>li>a.on {background:#26498c;color:#fff;border: 1px solid #26498c;border-bottom-left-radius:0;border-bottom-right-radius:0;}
 #lnb .depth_01>li>a.on +.depth_02 {display:block;}
 
-@media (max-width: 1399px) { 
+@media (max-width: 1399px) {
 	#sub #lnb {display: none;}
 	#sub #content {float: none;padding-left:0;width:100%}
 }
@@ -72,7 +72,7 @@
   .title_box h3{font-size:28px;}
 
   #sub .title_box{padding:35px 20px 30px;margin-bottom:30px;}
-  
+
   .top_box .btn_box .print{display:none;}
   .top_box .btn_box .share ul{top:34px;}
   .top_box .btn_box .share ul li a{width:30px;height:31px;background-size:400px 1154px;}
@@ -81,7 +81,7 @@
   .top_box .btn_box .share ul li a.twitter{background-position:-62px -247px;}
   .top_box .btn_box .share ul li a.cacao{background-position:-93px -247px;}
   .top_box .btn_box .share ul li a.insta{background-position:-124px -247px;}
-  .top_box .btn_box .share ul li a.utube{background-position:-155px -247px;}  
+  .top_box .btn_box .share ul li a.utube{background-position:-155px -247px;}
 }
 
 @media (max-width:760px) {
@@ -96,11 +96,11 @@
 @media (max-width:1000px) {
 	.skinTb-wrapper.width1000{margin-right:-20px;}
 }
-  
+
   @media (max-width:768px) {
 	.skinTb-wrapper.width768{margin-right:-20px;}
 }
-  
+
   @media (max-width:640px) {
 	.skinTb-wrapper.width640{margin-right:-15px;}
 }
@@ -150,7 +150,7 @@
 
 .skinTb .listLv li:before {top:12px;height:1px;}
 p.listLv, div.listLv, span.listLv, .listLv >li, .listLv >dt, .listLv >dd,
-p.listLv2, div.listLv2, span.listLv2, .listLv2 >li, .listLv2 >dt, .listLv2 >dd, 
+p.listLv2, div.listLv2, span.listLv2, .listLv2 >li, .listLv2 >dt, .listLv2 >dd,
 p.listLv3, div.listLv3, span.listLv3, .listLv3 >li, .listLv3 >dt { padding-left: 15px;}
 
 p.listLv:before, div.listLv:before, span.listLv:before, .listLv >li:before, .listLv >dt:before {top:16px;left:0;width:7px;height:7px;border-radius:50%;border:0;background:#333;transform:rotate(0deg);border:0;}
@@ -190,13 +190,13 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 .process_list li >div>div{ display:block;line-height:1.5;position:absolute;top:50%;left:0;width:100%;padding:0 15px;transform:translateY(-50%);text-align:center;}
 .process_list li >div>div span{display:block;line-height:1;color:#26498b;}
 .process_list li >div>div span:first-child{font-size:24px;font-weight:400;margin-bottom:9px;}
-.process_list li >div>div span:last-child{font-size:30px;font-weight:700;} 
+.process_list li >div>div span:last-child{font-size:30px;font-weight:700;}
 .process_list li p{line-height:1.4;color:#333;font-weight:300;margin-top:12px;text-align:center;font-size:16px;}
 
 .process_list li.on >div { background: #26498b; border-radius: 50%; border-color:#26498b;}
 .process_list li.on >div::after {content: none;}
 .process_list li:first-child div:before{border-color:#26498b}
-.process_list li.on >div>div span{display:block;color:#fff;} 
+.process_list li.on >div>div span{display:block;color:#fff;}
 
 @media (max-width:485px) {
     /* .process_list li{margin-right:20px;float:none;width:100%;padding-bottom:20px;}
@@ -226,8 +226,8 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 #sub .injae .contsBtn {height:4.6rem;}
 #sub .injae .contsBtn.contsBtnSmall {height:3.4rem;line-height: 32px;}
 #sub .skinBtnBo:not(.boSrch-btnBo),
-#sub .skinBtnBo:not(.boMultiSrch-btnBo), 
-#sub .skinBtnBo:not(.ctrlFile-btnFile){height:46px;line-height:44px;}	
+#sub .skinBtnBo:not(.boMultiSrch-btnBo),
+#sub .skinBtnBo:not(.ctrlFile-btnFile){height:46px;line-height:44px;}
 }
 
 .injae .contsBtn{border-color:#26498c;color:#26498c;}
@@ -311,7 +311,7 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 }
 
 /* icons style */
-#sub .icoSecret{width:16px;} 
+#sub .icoSecret{width:16px;}
 #sub .icoComment{width:20px;}
 #sub .icoNew{width:20px;}
 #sub .popLy-btnMore {width:18px;height:22px;background:url(./../images/common/sp_injae.png)-340px -46px no-repeat;}
@@ -339,20 +339,20 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 #sub .boSrchArea .boSrch-btnBo {color: #fff;border-color:#303030;}
 
 @media screen and (min-width: 640px) {
-	#sub .boSrchArea .skinIptTxt, 
+	#sub .boSrchArea .skinIptTxt,
 	#sub .boSrchArea .skinSelectBox {height: 40px; line-height: 40px; border:1px solid #ccc;}
 	#sub .boSrchArea { padding: 1rem 1.4rem 1rem 1rem;}
 	#sub .boSrchArea .boMeta {float:right;padding-top: 12px;}
-	#sub .boSrchArea .skinBtnBo.boSrch-btnBo, 
+	#sub .boSrchArea .skinBtnBo.boSrch-btnBo,
 	#sub .boSrchArea .skinBtnBo.boMultiSrch-btnBo { height: 40px;line-height: 40px;}
-}	
+}
 
 /* sub common form style */
-#sub .skinIptTxt, 
+#sub .skinIptTxt,
 #sub .skinSelectBox {border-color:#ccc; color:#333; font-size:16px; font-weight:300; font-family:'Noto Sans KR', sans-serif;}
 #sub .skinSelectBox {appearance:none; background: #fff url('./../../common/images/ico-arrow-select.png') no-repeat right 5px center;}
 
-#sub .btnBoPrev span, 
+#sub .btnBoPrev span,
 #sub .btnBoNext span  { width: 18px; height: 11px;}
 #sub .btnBoNext span {background-position: 50% -12px;}
 
@@ -360,7 +360,7 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 #sub .phoneNum + p {font-size:14px; color:#3883ff;}
 
 
-/* TODO: radio 
+/* TODO: radio
 #sub .skinIptRadio {} */
 
 #sub .skinBtnBo.ctrlFile-btnFile {height:35px;line-height:35px;color:#fff;font-size:16px;background:#333;border:1px solid #333;}
@@ -372,10 +372,44 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 }
 @media screen and (min-width: 640px) {
 	#sub .skinIptTxt, #sub .skinSelectBox { height: 35px;line-height: 32px;}
-	#sub .btnBoPrev span, 
+	#sub .btnBoPrev span,
     #sub .btnBoNext span {margin-right:28px;}
-    #sub .phoneNum, 
+    #sub .phoneNum,
 	#sub .phoneNum + p{display: inline-block;}
 	#sub .ctrlFile-fileTxt{margin-left:6px;}
 }
 
+/* 인재육성 */
+#sub .skinTb .listLv4 { color: #333;}
+#sub .skinTb .listLv4 li { font-size: 16px;}
+
+/* 장학사업 한눈에 */
+.talent-develop .title_box { padding:50px 20px 30px 0;margin-bottom:20px;}
+.talent-develop .title_box h3 {line-height:1.45;font-size:30px;color:#111;font-weight:700;text-align:left;margin-bottom:5px;}
+.talent-develop .skinTb .process_list { margin: 10px 0;}
+.talent-develop .skinTb .process_list li { margin-top:0;}
+.talent-develop .skinTb .process_list li::before {margin-top: 0px;}
+
+@media screen and (max-width: 767px) {
+	.talent-develop .title_box h3 {font-size:24px;}
+	#sub .skinTb .listLv4 li { font-size: 13px;}
+}
+/* 장학사업소개 */
+/* .scholarship{} */
+.txt-underline {text-decoration: underline;}
+.skinTb .skinVta-top {vertical-align: top;}
+.talent-develop .skinTb .skinColor-fmInfo {font-size: 14px;}
+.talent-develop .skinTb .skinColor-fmInfo.skinColor-blue {color: #1556d1 !important;}
+.talent-develop .skinColor-blue {color: #0c68e1 !important;}
+.talent-develop .skinColor-red {color: #d83232 !important;}
+.talent-develop .imptBox {display: flex; align-items: center; justify-content: center; margin-top:50px;}
+.talent-develop .imptBox div { margin: 0 122px;}
+.talent-develop .imptBox div img {display: inline-block; margin-top:2px; vertical-align: middle; margin-top:-2px; margin-right: 6px;}
+
+.scholarship .skinTb strong { color: #333;}
+.scholarship .skinTb .listLv4 li {margin-bottom: 25px;}
+.scholarship .skinTb-wrapper + .skinTb-wrapper { margin-top: 35px;}
+
+/* 18개 시군 장학금 안내 */
+.talent-develop .img-box { border: 1px solid #ccc; text-align: center;}
+.talent-develop .img-box + .skinTb-wrapper {  margin-top:50px;}
