@@ -3,8 +3,14 @@
 #sub{padding-top:145px;overflow:hidden;}
 #sub .inner{max-width:1420px;padding:0 20px;}
 #sub #lnb {float:left;width:270px;padding-bottom:20px;}
-#sub #content{float:right;width:calc(100% - 270px);padding-bottom:120px;padding-left:30px;}
+#sub #content{float:right;width:calc(100% - 270px);padding-bottom:120px;padding-left:30px; min-height: 800px;}
 #sub_container{position:relative;}
+
+/* utils */
+.box-line {
+	border: 1px solid #ccc;
+}
+.w-max800 { max-width: 800px; margin: 0 auto;}
 
 /* lnb : aside menu style */
 #lnb .depth_01>li+li {margin-top:5px;}
@@ -12,11 +18,20 @@
 #lnb .depth_02 {display:none;border-style: solid; border-color: #aaa; border-width:1px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;}
 #lnb .depth_02 li+li {border-top: 1px solid #aaa;}
 #lnb .depth_02 li a {position:relative;display:block; background: #f6f6f6;padding:17px 20px 17px;font-size:18px;color:#333;}
+#lnb .depth_02 li a.on {font-weight: bold;}
 #lnb .depth_01 .anchor::before {content:'';position:absolute;top:50%;right:20px;transform:translateY(-50%);transform-origin:center;display:block;width:18px;height:11px;background:url(/page/common/images/sp_injae.png) -458px -24px no-repeat;}
+#lnb .depth_01 .anchor.single::before {display: none;}
 #lnb .depth_01 .anchor.on::before {background-position:-458px -10px;}
 #lnb .depth_02 li:last-child a {display:block; background: #f6f6f6;border-bottom-left-radius:10px;border-bottom-right-radius:10px;}
 #lnb .depth_01>li>a.on {background:#26498c;color:#fff;border: 1px solid #26498c;border-bottom-left-radius:0;border-bottom-right-radius:0;}
 #lnb .depth_01>li>a.on + .depth_02 { display: block;}
+
+
+#lnb .depth_01>li> .anchor.single {border-bottom-left-radius:10px;border-bottom-right-radius:10px; }
+#lnb .depth_01 .anchor.single::before {transform:rotate(-90deg);margin-top: -5px; right: 15px;}
+
+#lnb .depth_01 .anchor.single.on::before {transform:rotate(90deg); margin-top: -5px; right: 15px;}
+
 
 @media (max-width: 1399px) {
 	#sub #lnb {display: none;}
@@ -24,29 +39,29 @@
 }
 
 /* title box */
-.title_box {padding:60px 20px 40px;margin-bottom:20px;text-align:center;position:relative;}
+.title_box {padding:40px 20px 40px;margin-bottom:20px;text-align:center;position:relative;}
 .title_box h3{line-height:1.45;font-size:36px;color:#111;font-weight:700;text-align:center;margin-bottom:5px;}
 
 
 /* top_box style */
-.top_box {position: relative;padding:30px 0;}
-.top_box::before {content:'';position:absolute;background: url(/page/common/images/img-line.gif); height:1px;width:100%;bottom:0;left:0;}
+.top_box {position: relative;padding:30px 0; margin-bottom: 20px;}
+.top_box::before {content:'';position:absolute;background: url(/page/common/images/common/img-line.gif); height:1px;width:100%;bottom:0;left:0;}
 
 /* route : breadcrumbs style */
 .top_box .route {float:left;}
 .top_box .route a {position:relative;display:inline-block;color:#666;font-size:16px;font-weight:400;transition:all .1s;margin-right:16px;padding-left:24px;line-height:1.25;}
 .top_box .route a + a::before {content:'';position:absolute;top:50%;transform: translateY(-50%);left:0;background: url(/page/common/images/ico-arrow-gray.png) no-repeat 0 0; height:7px;width:6px;}
-.top_box .route a.home { width:20px;height:20px;background:url(/page/gangwoninjae/images/common/sp_injae.png) no-repeat -10px -10px;text-indent:-9999px;margin-top:2px;padding-left:0;overflow:visible;}
+.top_box .route a.home { width:20px;height:20px;background:url(/page/injae/imgs/common/sp_injae.png) no-repeat -10px -10px;text-indent:-9999px;margin-top:2px;padding-left:0;overflow:visible;}
 .top_box .route a:last-child {color:#111;font-weight:700;}
 
 /* btn-box: print, share button style*/
 .top_box .btn_box {float:right;}
 .top_box .btn_box .print,
 .top_box .btn_box .share .open {display:inline-block;width:20px;height:20px;text-indent:-9999px;}
-.top_box .btn_box .print {position:relative;background:url(/page/gangwoninjae/images/common/sp_injae.png) -110px -10px no-repeat;margin-left:36px;}
+.top_box .btn_box .print {position:relative;background:url(/page/injae/imgs/common/sp_injae.png) -110px -10px no-repeat;margin-left:36px;}
 .top_box .btn_box .print::before {content:"";position:absolute;top:0;left:-20px;width:1px;height:20px;background:#ccc;}
 .top_box .btn_box .share {position: relative;display:inline-block;}
-.top_box .btn_box .share .open{background:url(/page/gangwoninjae/images/common/sp_injae.png) -60px -10px no-repeat;}
+.top_box .btn_box .share .open{background:url(/page/injae/imgs/common/sp_injae.png) -60px -10px no-repeat;}
 .top_box .btn_box .share .open:active{transform:scale(.95);}
 
 /* share : share sns list style */
@@ -67,7 +82,7 @@
   #sub #content{padding-bottom:100px;}
 
   .title_box h3{font-size:28px;}
-  #sub .title_box{padding:35px 20px 30px 0;margin-bottom:20px;}
+  #sub .title_box{padding:15px 20px 30px 0;margin-bottom:20px;}
 
   .top_box .btn_box .print{display:none;}
   .top_box .btn_box .share ul{top:34px;}
@@ -77,7 +92,7 @@
 @media (max-width:760px) {
   #sub .inner{padding:0 15px;}
   #sub #content{padding-bottom:40px;}
-  #sub .title_box{padding:25px 0px 15px;margin-bottom:10px;}
+  #sub .title_box{padding:15px 0px 15px;margin-bottom:10px;}
   .top_box {padding: 20px 0 15px;}
   .top_box h3{font-size:23px;}
   .top_box .route a{font-size:14px; padding-left: 20px; margin-right: 10px;}
@@ -96,15 +111,18 @@
 	.skinTb-wrapper.width640{margin-right:-15px;}
 }
 
-/* pageTab: Tab style */
+/* pageTab: Tab style -> url tab */
 
 #sub .pageTab {margin-bottom:30px;}
 #sub .pageTab-tab{font-weight:400;}
 #sub .pageTab >li {border-radius: 10px; border-color: #fff; box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);}
 #sub .pageTab >li a {font-size:20px;color:#333;height:55px;line-height: 1.45;}
 #sub .pageTab >li:hover a { text-decoration: none;}
-#sub .pageTab >li.active{background: #26498c;border-color:#26498c;}
+#sub .pageTab >li.active {background: #26498c;border-color:#26498c;}
 #sub .pageTab >li.active a{color:#fff;}
+
+#sub .pageTab-panel { display: none;}
+#sub .pageTab-panel.active { display: block;}
 
 @media (max-width: 760px){
     #sub .pageTab{padding-top:40px;padding-bottom:0px !important;height:40px !important;margin-bottom:20px;}
@@ -124,9 +142,13 @@
 /* titLv : common heading title style  */
 #sub .titLv {color:#111 !important;}
 #sub .titLv2,
-#sub .pgraph{color:#333;}
+#sub .pgraph {color:#333; margin-top:20px; padding-top:0;}
+#sub .pgraph {font-weight: 300;}
 
-#sub .titLv2 { margin-top: 50px;}
+#sub h3.titLv {font-size: 30px;}
+
+#sub .titLv,
+#sub .titLv2 { margin-top: 50px; margin-bottom: 10px;}
 #sub .titLv2:first-child { margin-top: 0;}
 
 #sub .titLv3 {color: #26498c;font-weight:700;}
@@ -138,19 +160,34 @@
 
 #sub .listLv,
 #sub .listLv2 {color: #333;}
-#sub .imptBox{color:#666;background:#f5f5f5;font-size:14px;padding:30px 34px;}
+#sub .imptBox{color:#666;background:#f5f5f5;font-size:14px;padding:30px 34px; width: 100%;}
+
+/* impbox style */
+.injae .imptBox {display: flex; align-items: center; justify-content: center; margin-top:50px;}
+.injae .imptBox div { margin: 0 122px;}
+.injae .imptBox div img {display: inline-block; margin-top:2px; vertical-align: middle; margin-top:-2px; margin-right: 6px;}
+
+@media (max-width:1199px) {
+    .injae .imptBox div {margin: 0 75px;}
+}
+
+
+@media (max-width:760px) {
+	.injae .imptBox {display: flex;}
+    .injae .imptBox div {width: 100%; text-align: center; margin: 0;}
+}
 
 /*l listLv : list level style */
-.titLv2:before {top:9px;left:0px;background:url(/page/gangwoninjae/images/common/sp_injae.png) -270px -11px no-repeat;width:15px;height:15px;}
-.titLv3:before {top:6px;left:29px;background:url(/page/gangwoninjae/images/common/sp_injae.png) -314px -11px no-repeat;width:4px;height:18px;border-radius:0;}
+.titLv2:before {top:9px;left:0px;background:url(/page/injae/imgs/common/sp_injae.png) -270px -11px no-repeat;width:15px;height:15px;}
+.titLv3:before {top:6px;left:29px;background:url(/page/injae/imgs/common/sp_injae.png) -314px -11px no-repeat;width:4px;height:18px;border-radius:0;}
 
 .skinTb .listLv li:before {top:12px;height:1px;}
 p.listLv, div.listLv, span.listLv, .listLv >li, .listLv >dt, .listLv >dd,
 p.listLv2, div.listLv2, span.listLv2, .listLv2 >li, .listLv2 >dt, .listLv2 >dd,
 p.listLv3, div.listLv3, span.listLv3, .listLv3 >li, .listLv3 >dt { padding-left: 15px;}
 
-p.listLv:before, div.listLv:before, span.listLv:before, .listLv >li:before, .listLv >dt:before {top:16px;left:0;width:7px;height:7px;border-radius:50%;border:0;background:#333;transform:rotate(0deg);border:0;}
-p.listLv2:before, div.listLv2:before, span.listLv2:before, .listLv2 >li:before, .listLv2 >dt:before {top: 8px;width:7px;height:9px;background: url(/page/gangwoninjae/images/common/sp_injae.png) -196px -16px no-repeat;}
+p.listLv:before, div.listLv:before, span.listLv:before, .listLv >li:before, .listLv >dt:before {top:18px;left:0;width:7px;height:7px;border-radius:50%;border:0;background:#333;transform:rotate(0deg);border:0;}
+p.listLv2:before, div.listLv2:before, span.listLv2:before, .listLv2 >li:before, .listLv2 >dt:before {top: 8px;width:7px;height:9px;background: url(/page/injae/imgs/common/sp_injae.png) -196px -16px no-repeat;}
 p.listLv3:before, div.listLv3:before, span.listLv3:before, .listLv3  >li:before, .listLv3 >dt:before {width:7px;height:1px;background:#333;}
 p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, .listLv4 >dt:before {background:#888;}
 
@@ -170,6 +207,7 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 #sub .contsLead {padding:10px; background: #eceff8; border-bottom: none; margin-bottom:50px;}
 #sub .contsLead::before {content: none;}
 #sub .contsLead .contsLead-conts { background: #f7f9fe;}
+#sub .contsLead-img {max-width: auto;}
 
 @media (min-width:640px) {
 #sub .contsLead-img { padding: 26px 70px 20px;}
@@ -186,7 +224,7 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 .process_list li >div::after{content:''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: calc(100% - 15px); height: calc(100% - 15px); border-radius: 50%; border: 1px solid #ccc;}
 .process_list li >div>div{ display:block;line-height:1.5;position:absolute;top:50%;left:0;width:100%;padding:0 15px;transform:translateY(-50%);text-align:center;}
 .process_list li >div>div span{display:block;line-height:1;}
-.process_list li >div>div span:first-child{font-size:24px;font-weight:400;margin-bottfom:9px;}
+.process_list li >div>div span:first-child{font-size:24px;font-weight:400;margin-bottom:9px;}
 .process_list li >div>div span:last-child{font-size:30px;font-weight:700;}
 .process_list li p{line-height:1.4;color:#333;font-weight:300;margin-top:12px;text-align:center;font-size:16px;}
 
@@ -195,7 +233,7 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 .process_list li.on div:before{border-color:#26498b}
 .process_list li.on >div>div span{display:block;color:#fff;}
 
-@media (max-width:485px) {
+@media (max-width:768px) {
     .process_list li{margin-right:20px;float:none;width:100%;padding-bottom:30px;}
     .process_list li >div{position:relative;width:100%;min-height:100px;padding-top:0;margin:0 auto;max-width:320px;}
     .process_list li >div:before{border-radius:15px;}
@@ -207,6 +245,7 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 
 /* skinTb : table style */
 #sub .skinTb {color: #666;font-size:16px;}
+#sub .skinTb td {padding: 1rem 2rem;}
 #sub .skinTb.skinTb-row {color: #333;}
 #sub .skinTb:before {border-top: 3px solid #26498c;}
 #sub .skinTb-th,
@@ -218,6 +257,22 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 	border-color: #a0acc4;
 }
 #sub .skinTb .skinTb-td.skinTb-conts{border-right:1px solid #a0acc4;}
+#sub .skinTb .skinTb-td.skinTb-conts img{width:100%;}
+
+/* 테이블 말줄임표 */ /* 221218 추가 */ /* 적용시 표 깨짐*/
+/* #sub .skinTb-data-resList {	table-layout: fixed; width: 100%;}
+#sub .skinTb-data-resList th[data-column-width="5%"]  {width: 5%}
+#sub .skinTb-data-resList th[data-column-width="10%"]  {width: 10%}
+#sub .skinTb-data-resList th[data-column-width="15%"]  {width: 15%}
+#sub .skinTb-data-resList th[data-column-width="20%"]  {width: 20%}
+#sub .skinTb-data-resList th[data-column-width="25%"]  {width: 25%}
+#sub .skinTb-data-resList th[data-column-width="30%"]  {width: 30%}
+#sub .skinTb-data-resList th[data-column-width="35%"]  {width: 35%}
+#sub .skinTb-data-resList th[data-column-width="40%"]  {width: 40%}
+#sub .skinTb-data-resList th[data-column-width="45%"]  {width: 45%}
+#sub .skinTb-data-resList th[data-column-width="50%"]  {width: 50%}
+#sub .skinTb-data-resList tbody .skinTb-sbj a {text-decoration: none;}
+#sub .skinTb-data-resList tbody .skinTb-sbj a p {text-overflow: ellipsis; white-space: nowrap; overflow: hidden; max-width: 85%; display: inline-block; vertical-align: middle;} */
 
 /* contsBtn : page common style */
 
@@ -234,7 +289,7 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 .injae .skinBtnBo {border-color:#26498c;color:#26498c;}
 .injae .skinBtnBo:before{background:#26498c}
 
-.contsBtn > a:after{background:url(/page/gangwoninjae/images/common/sp_injae.png) 0 0 no-repeat;}
+.contsBtn > a:after{background:url(/page/injae/imgs/common/sp_injae.png) 0 0 no-repeat;}
 #sub .skinBtnBo:hover,
 #sub .contsBtn:hover {color:#fff;}
 #sub .contsBtn > a.contsBtn-download:after{background-position:-10px -90px;right:20px;margin-top:-8px;}
@@ -275,6 +330,16 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 #sub .skbtn.ty03:active{transform:scale(.95);}
 #sub .skbtn.ty03:hover:before{margin-bottom: -310px;animation: rotate 2000ms infinite linear;}
 
+#sub .skbtn.ty04{height:60px;line-height:60px;background:#26498c;border:1px solid #26498c;color:#26498c;font-size:18px;font-weight:400;border-radius:30px;font-size:18px;transition:all .1s;padding:0 57px;background:#26498c;}
+#sub .skbtn.ty04 span{position:relative;display:inline-block;color:#fff;}
+#sub .skbtn.ty04:hover{text-decoration:none;color:#fff;}
+#sub .skbtn.ty04:before{content:'';position:absolute;bottom:0%;left:50%;background:#26498c;width:410px;height:410px;margin-left:-200px;margin-bottom:-410px;transform-origin:50% 48%;border-radius:43%;}
+
+.border {border-radius: 3px; text-align: center; padding: 0 5px; position: relative; top: -3px; margin: 0 3px 0 0;  padding: 0 5px; color: #fff;}
+.border.type1 {border: 1px solid #2a4b96; background: #2a4b96;}
+.border.type2 {border: 1px solid #de1818; background: #de1818;}
+.border.type3 {border: 1px solid #19a66f; background: #19a66f;}
+
 @keyframes rotate {
   from { transform: rotate(0deg); }
   from { transform: rotate(360deg); }
@@ -289,7 +354,7 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 }
 
 /* pager : pagination */
-#sub .pager {position: relative;margin:14px auto 0;padding: 12px 20px 7px;text-align: center;}
+#sub .pager {position: relative;margin:14px auto 0;padding: 10px 20px 7px;text-align: center;}
 #sub .pager-num {display: none;}
 #sub .pager-link {display: inline-block;min-width:28px;height:30px;padding: 0 5px;border-width: 1px;border-style: solid; background-color:#fff;border-color: #ccc;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;line-height: 27px;vertical-align: middle;font-size:16px;color:#333 !important}
 #sub .pager-link.active {background: #333;color: #fff !important;border-color: #333;}
@@ -313,9 +378,9 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 #sub .icoSecret{width:16px;}
 #sub .icoComment{width:20px;}
 #sub .icoNew{width:20px;}
-#sub .popLy-btnMore {width:18px;height:22px;background:url(/page/gangwoninjae/images/common/sp_injae.png)-340px -46px no-repeat;}
+#sub .popLy-btnMore {width:20px;height:22px;background:url(/page/injae/imgs/common/sp_injae.png)-340px -44px no-repeat;}
 
-#sub .icoFile {display: inline-block;width: 28px;height: 28px;margin-right:4px;vertical-align: middle;background:url(/page/gangwoninjae/images/common/sp_injae.png) no-repeat;margin-left:7px;}
+#sub .icoFile {display: inline-block;width: 28px;height: 28px;margin-right:4px;vertical-align: middle;background:url(/page/injae/imgs/common/sp_injae.png) no-repeat;margin-left:7px;}
 #sub .icoFile-data-hwp {background-position: -40px -46px;}
 #sub .icoFile-data-doc {background-position: -73px -46px;}
 #sub .icoFile-data-jpg {background-position: -106px -46px;}
@@ -367,8 +432,9 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 #sub .skinIptRadio { width: 0; height: 0; position: absolute; left: -9999px;}
 #sub .skinIptRadio + label {position:relative; display:inline-block; font-size:15px; color: #333;line-height: 20px;padding-left:23px;}
 #sub .skinIptRadio + label::before {content:'';position:absolute;left: 0;top:0;width:18px;height:18px;border:1px solid #707070; border-radius:50%;}
-#sub .skinIptRadio:checked + label::after {content: ''; position: absolute; top: 5px; left:5px; width: 10px; height:10px; background:#333;border-radius:50%;}
+#sub .skinIptRadio:checked + label::after {content: ''; position: absolute; top: 4px; left:4px; width: 10px; height:10px; background:#333;border-radius:50%;}
 
+#sub .ctrlFile {margin-bottom: 10px;}
 #sub .skinBtnBo.ctrlFile-btnFile {height:35px;line-height:35px;color:#fff;font-size:16px;background:#333;border:1px solid #333;}
 #sub .ctrlFile-fileTxt{font-size:14px;color:#666;}
 #sub .skinBtnDel {width: 17px; height:17px;}
@@ -386,9 +452,36 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 	#sub .skinIptRadio + label { font-size:16px;}
 }
 
+
+/* gallery-list */
+.gallery-list {width: 100%;}
+.gallery-list figure {float:left; width: 32%; border: 1px solid #ccc; margin-right: 2%; margin-bottom: 2%; transition: all 0.3s ease-in-out;}
+.gallery-list figure:hover,
+.gallery-list figure:focus { box-shadow:0 0 15px 0 rgba(0, 0, 0, 0.3);}
+.gallery-list figure:nth-child(3n) {margin-right: 0;}
+.gallery-list figure>a { position: relative; display: block; width: 100%; height: 255px;}
+.gallery-list figure img {width: 100%; height: 100%; object-fit: cover;}
+.gallery-list figure .play { position: absolute; width: 108px; height: 108px; z-index: 2; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+.gallery-list figcaption {padding: 16px 19px 0;}
+.gallery-list figcaption h4 {text-overflow: ellipsis; overflow: hidden; white-space: nowrap;  margin-bottom: 10px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; transition: all 2s;}
+.gallery-list figcaption h4:focus a,
+.gallery-list figcaption h4:hover a { text-decoration: underline; color: #333; font-weight: 400; }
+.gallery-list figcaption .cont-info { border-top: 1px solid #ccc; padding: 10px 0 15px; display: flex; justify-content: space-between; align-items: center;}
+.gallery-list figcaption time {padding-left: 21px; color: #888; background: url(/page/injae/imgs/common/icon-calendar.png) left center no-repeat;}
+.gallery-list figcaption .view {padding-left: 21px; color: #888; background: url(/page/injae/imgs/common/icon-eye.png) left center no-repeat;}
+
+
+@media screen and (max-width: 768px) {
+	.gallery-list figure { width: 49%; margin-right: 2%; margin-bottom: 2%;}
+	.gallery-list figure:nth-child(3n) {margin-right: 2%;}
+	.gallery-list figure:nth-child(2n) {margin-right: 0;}
+}
+
+
 /* 인재육성 */
-#sub .skinTb .listLv4 { color: #333;}
+#sub .skinTb .listLv4 { color: #666;}
 #sub .skinTb .listLv4 li { font-size: 16px;}
+
 
 /* 장학사업 한눈에 */
 .talent-develop .title_box { padding:50px 20px 30px 0;margin-bottom:20px;}
@@ -396,27 +489,1232 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 .talent-develop .skinTb .process_list { margin: 10px 0;}
 .talent-develop .skinTb .process_list li { margin-top:0;}
 .talent-develop .skinTb .process_list li::before {margin-top: 0px;}
+.talent-develop .imptBox div {margin: 0 80px;}
 
 @media screen and (max-width: 767px) {
 	.talent-develop .title_box h3 {font-size:24px;}
 	#sub .skinTb .listLv4 li { font-size: 13px;}
 }
 /* 장학사업소개 */
-/* .scholarship{} */
 .txt-underline {text-decoration: underline;}
 .skinTb .skinVta-top {vertical-align: top;}
 .talent-develop .skinTb .skinColor-fmInfo {font-size: 14px;}
 .talent-develop .skinTb .skinColor-fmInfo.skinColor-blue {color: #1556d1 !important;}
 .talent-develop .skinColor-blue {color: #0c68e1 !important;}
 .talent-develop .skinColor-red {color: #d83232 !important;}
-.talent-develop .imptBox {display: flex; align-items: center; justify-content: center; margin-top:50px;}
-.talent-develop .imptBox div { margin: 0 122px;}
-.talent-develop .imptBox div img {display: inline-block; margin-top:2px; vertical-align: middle; margin-top:-2px; margin-right: 6px;}
 
+.scholarship .btn_wrap {display: flex; flex-wrap: wrap; justify-content: center;}
+.scholarship .btn_wrap .skinMt-xlarge {width: 31%;}
 .scholarship .skinTb strong { color: #333;}
 .scholarship .skinTb .listLv4 li {margin-bottom: 25px;}
 .scholarship .skinTb-wrapper + .skinTb-wrapper { margin-top: 35px;}
+.scholarship .boSrchArea { margin-top:20px;}
 
+@media screen and (max-width: 1000px) {
+	.scholarship .btn_wrap .skinMt-xlarge {width: 100%; margin-top: 25px;}
+}
+
+/* 221217 전체 수정 시작 */
 /* 18개 시군 장학금 안내 */
-.talent-develop .img-box { border: 1px solid #ccc; text-align: center;}
-.talent-develop .img-box + .skinTb-wrapper {  margin-top:50px;}
+.img-box { position: relative; border: 1px solid #ccc; text-align: center;}
+.talent-develop .img-box + .skinTb-wrapper { margin-top:50px;}
+/* pc  */
+.talent-develop .map-area { background: url(/page/injae/imgs/sub/map.png) no-repeat 0 0; display: block; width: 581px; height: 604px; background-size: contain; position: relative;  margin: 30px auto 40px; transition: all 0.4s ease-in-out;}
+.talent-develop .map-area .area { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);background-size: contain; cursor: pointer; background-repeat: no-repeat;}
+.talent-develop .map-area .area-01 { width: 130px;height:80px; margin-top: -31.8%; margin-left: -38.9%;}
+.talent-develop .map-area .area-02 { width: 121px;height:114px; margin-top: -27.8%; margin-left: -25.1%;}
+.talent-develop .map-area .area-03 { width: 87px; height: 115px; margin-top: -27.2%; margin-left: -9.1%;}
+.talent-develop .map-area .area-04 { width: 99px; height: 146px; margin-top: -39.5%; margin-left: 10.2%}
+.talent-develop .map-area .area-05 { width: 132px;height: 131px; margin-top: -11.9%; margin-left: -22.2%;}
+.talent-develop .map-area .area-06 { width: 137px;  height: 190px; margin-top: -21.8%; margin-left: 0.9%;}
+.talent-develop .map-area .area-07 { width: 53px;  height: 47px; margin-top: -24.4%; margin-left: 15%}
+.talent-develop .map-area .area-08 { width: 283px;  height: 132px; margin-top: -1.8%; margin-left:-8.6%;}
+.talent-develop .map-area .area-09 { width: 106px;  height: 107px; margin-top: -14.9%; margin-left:18.2%;}
+.talent-develop .map-area .area-10 { width: 142px;  height: 131px; margin-top: 14.1%; margin-left:-11.3%;}
+.talent-develop .map-area .area-11 { width: 140px;  height: 180px; margin-top: 11%; margin-left: 11.3%;}
+.talent-develop .map-area .area-12 { width: 129px;  height: 139px; margin-top: 3.1%; margin-left: 27.3%;}
+.talent-develop .map-area .area-13 { width: 127px;  height: 114px; margin-top: 22.1%; margin-left: -14.8%;}
+.talent-develop .map-area .area-14 { width: 205px;  height: 136px; margin-top: 30.8%; margin-left: 9.8%;}
+.talent-develop .map-area .area-15 { width: 125px; height: 138px; margin-top: 21.8%; margin-left: 22.5%;}
+.talent-develop .map-area .area-16 { width: 54px; height: 57px; margin-top: 14.3%; margin-left: 37.1%;}
+.talent-develop .map-area .area-17 { width: 56px;  height: 108px; margin-top: 34%; margin-left:32.1%; z-index: 2;}
+.talent-develop .map-area .area-18 { width: 134px; height: 164px; margin-top: 31%; margin-left: 38.2%;}
+
+.talent-develop .map-area .area-01:focus,
+.talent-develop .map-area .area-01:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-01.svg);}
+.talent-develop .map-area .area-02:focus,
+.talent-develop .map-area .area-02:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-02.svg);}
+.talent-develop .map-area .area-03:focus,
+.talent-develop .map-area .area-03:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-03.svg);}
+.talent-develop .map-area .area-04:focus,
+.talent-develop .map-area .area-04:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-04.svg);}
+.talent-develop .map-area .area-05:focus,
+.talent-develop .map-area .area-05:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-05.svg);}
+.talent-develop .map-area .area-06:focus,
+.talent-develop .map-area .area-06:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-06.svg);}
+.talent-develop .map-area .area-07:focus,
+.talent-develop .map-area .area-07:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-07.svg);}
+.talent-develop .map-area .area-08:focus,
+.talent-develop .map-area .area-08:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-08.svg);}
+.talent-develop .map-area .area-09:focus,
+.talent-develop .map-area .area-09:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-09.svg);}
+.talent-develop .map-area .area-10:focus,
+.talent-develop .map-area .area-10:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-10.svg);}
+.talent-develop .map-area .area-11:focus,
+.talent-develop .map-area .area-11:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-11.svg);}
+.talent-develop .map-area .area-12:focus,
+.talent-develop .map-area .area-12:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-12.svg);}
+.talent-develop .map-area .area-13:focus,
+.talent-develop .map-area .area-13:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-13.svg);}
+.talent-develop .map-area .area-14:focus,
+.talent-develop .map-area .area-14:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-14.svg);}
+.talent-develop .map-area .area-15:focus,
+.talent-develop .map-area .area-15:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-15.svg);}
+.talent-develop .map-area .area-16:focus,
+.talent-develop .map-area .area-16:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-16.svg);}
+.talent-develop .map-area .area-17:focus,
+.talent-develop .map-area .area-17:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-17.svg);}
+.talent-develop .map-area .area-18:focus,
+.talent-develop .map-area .area-18:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-18.svg);}
+
+@media screen and (max-width: 689px) {
+	.talent-develop .map-area { width: 413px; height: 431px; background-size: contain; margin: 50px auto;}
+	.talent-develop .map-area .area-01 { width: 92px; height:58px; margin-top: -31.7%; margin-left: -38.9%;}
+	.talent-develop .map-area .area-02 { width: 86px; height:82px; margin-top: -27.8%; margin-left: -25.1%;}
+    .talent-develop .map-area .area-03 { width: 62px; height: 82px; margin-top: -27.2%; margin-left: -9.1%;}
+	.talent-develop .map-area .area-04 { width: 69px; height: 104px; margin-top: -39.5%; margin-left: 10.2%}
+	.talent-develop .map-area .area-05 { width: 94px; height: 94px; margin-top: -11.9%; margin-left: -22.2%;}
+	.talent-develop .map-area .area-06 { width: 98px; height: 138px;  margin-top: -21.6%; margin-left: 1%;}
+	.talent-develop .map-area .area-07 { width: 38px; height: 22px; margin-top: -25.4%; margin-left: 15%}
+	.talent-develop .map-area .area-08 { width: 201px; height: 89px; margin-top: -2.6%; margin-left:-8.6%;}
+	.talent-develop .map-area .area-09 { width: 76px; height: 71px;  margin-top: -15.7%; margin-left:18.2%;}
+	.talent-develop .map-area .area-10 { width: 102px; height: 86px; margin-top: 13.1%; margin-left:-11.3%;}
+	.talent-develop .map-area .area-11 { width: 100px; height: 129px; margin-top: 11%; margin-left: 11.3%;}
+	.talent-develop .map-area .area-12 { width: 91px; height: 98px; margin-top: 2.8%; margin-left: 27.3%;}
+	.talent-develop .map-area .area-13 { width: 90px; height: 82px;  margin-top: 22.1%; margin-left: -14.8%;}
+	.talent-develop .map-area .area-14 { width: 148px; height: 96px; margin-top: 30.4%; margin-left: 9.8%;}
+	.talent-develop .map-area .area-15 { width: 86px; height: 100px; margin-top: 21.8%; margin-left: 21.9%;}
+	.talent-develop .map-area .area-16 { width: 40px; height: 52px; margin-top: 15.3%; margin-left: 37.1%;}
+	.talent-develop .map-area .area-17 { width: 53px; height: 65px; margin-top: 32.3%; margin-left: 33.8%;}
+	.talent-develop .map-area .area-18 { width: 96px; height: 105px; margin-top: 29.3%; margin-left: 38.2%;}
+}
+
+
+@media screen and (max-width: 430px) {
+	.talent-develop .map-area { width: 350px; height: 400px;}
+	.talent-develop .map-area .area-01 { width: 80px; height:50px; margin-top: -36.7%; margin-left: -38.9%;}
+	.talent-develop .map-area .area-02 { width: 80px; height:69px; margin-top: -32.8%; margin-left: -24.1%;}
+    .talent-develop .map-area .area-03 { width: 53px; height: 78px; margin-top: -31.2%; margin-left: -9.1%;}
+	.talent-develop .map-area .area-04 { width: 61px; height: 89px; margin-top: -44.5%; margin-left: 10.2%}
+	.talent-develop .map-area .area-05 { width: 79px; height: 94px; margin-top: -14.9%; margin-left: -22.2%;}
+	.talent-develop .map-area .area-06 { width: 92px; height: 113px;  margin-top: -26.8%; margin-left: 2.4%;}
+	.talent-develop .map-area .area-07 { width: 35px; height: 19px; margin-top: -30.4%; margin-left: 15%}
+	.talent-develop .map-area .area-08 { width: 171px; height: 89px; margin-top: -5.6%; margin-left:-8.6%;}
+	.talent-develop .map-area .area-09 { width: 70px; height: 59px;  margin-top: -20.7%; margin-left:19.2%;}
+	.talent-develop .map-area .area-10 { width: 94px; height: 73px; margin-top: 8.1%; margin-left:-10.3%;}
+	.talent-develop .map-area .area-11 { width: 91px; height: 107px; margin-top: 6%; margin-left: 12.3%;}
+	.talent-develop .map-area .area-12 { width: 77px; height: 84px; margin-top: -2.2%; margin-left: 27.3%;}
+	.talent-develop .map-area .area-13 { width: 90px; height: 66px;  margin-top: 16.9%; margin-left: -12.9%;}
+	.talent-develop .map-area .area-14 { width: 139px; height: 77px; margin-top: 25%; margin-left: 11.8%;}
+	.talent-develop .map-area .area-15 { width: 86px; height: 84px; margin-top: 16.8%; margin-left: 23.9%;}
+	.talent-develop .map-area .area-16 { width: 34px; height: 44px; margin-top: 10.3%; margin-left: 37.1%;}
+	.talent-develop .map-area .area-17 { width: 53px; height: 55px; margin-top:  27.3%; margin-left: 34.8%;}
+	.talent-develop .map-area .area-18 { width: 80px; height: 88px; margin-top: 24.3%; margin-left: 38.2%;}
+}
+/* 221217 전체 수정 끝 */
+
+@media screen and (max-width: 767px) {
+	.talent-develop .img-box + .skinTb-wrapper {margin-top: 20px;}
+	.talent-develop .skinTb {width: 100%;}
+	/* .talent-develop .img-box img {max-width: 100%;} 221217 삭제 */
+	.talent-develop .skinTb a { border: 1px solid #26498c; border-radius: 5px; font-size: 14px; padding: 8px 4px; line-height: 43px;}
+	#sub .talent-develop .skinTb td {padding: 1rem 0.6rem;}
+	#sub .skinTb {font-size: 14px;}
+}
+
+
+
+/* 미래인재지원 */
+.selection-process { width: 100%; margin-top: 20px;}
+.selection-process li { position: relative; float: left; width: 30%; background-color: #f5f5f5; border: 1px dashed #d0d3db; border-radius: 10px; text-align: center; padding: 15px;}
+.selection-process li:last-child::after {content: none;}
+.selection-process li::after { content: ''; position: absolute; width: 12px; height: 19px; top: 50%; transform: translateY(-50%); right: -30px; background: url(/page/injae/imgs/common/icon-arrow.png) no-repeat 0 0;}
+.selection-process li + li { margin-left: 5%}
+.selection-process li > div { background: #fff; border-radius: 10px; border: 2px solid #26498c; padding: 19px 10px;}
+.selection-process li span {display: block; color: #26498c;}
+.selection-process li span:first-child {font-size:18px;}
+.selection-process li span:last-child {font-size:24px; font-weight:700;}
+.selection-process li p { font-size: 18px; color: #333; margin-top: 15px;}
+
+.titLv2 + .chart-area { margin-top: 20px;}
+
+@media screen and (max-width: 810px) {
+   .selection-process li span:first-child {font-size:14px;}
+   .selection-process li span:last-child {font-size:18px; font-weight:700;}
+}
+
+@media screen and (max-width: 640px) {
+	.selection-process li {float: none; width: 80%; margin: 0 auto;}
+	.selection-process li::after { transform: rotate(90deg); right: 50%; top: auto; bottom: -30px;}
+	.selection-process li + li { margin-left: auto; margin-top: 40px;}
+}
+
+
+/* 사업소개 */
+.introduction .list-symbol {margin-top: 50px;}
+.introduction .list-symbol>li { position: relative; padding: 50px 0 50px 200px; border-top: 1px solid #e5e5e5;}
+.introduction .list-symbol>li:last-child{border-bottom:1px solid #e5e5e5;}
+.introduction .list-symbol>li:before {content:""; position: absolute; top: 50px; left:0; width: 130px; height: 130px; border-radius:50%; background: #f5f5f5;}
+.introduction .list-symbol>li:after{content:""; position: absolute; top: 80px; left: 30px; background-image: url(/page/injae/imgs/common/sp_injae.png); background-repeat: no-repeat;}
+.introduction .list-symbol li h5 { font-size: 20px; color: #26498c; font-weight: 700;}
+.introduction .list-symbol li h6 { display: inline-block; height: 38px; padding: 0 10px; margin-top:30px;line-height: 36px; min-width: 100px; border: 1px solid #707070; color: #333; font-size: 16px; text-align: center;}
+.introduction .list-symbol li > .listLv {margin-left:0;}
+.introduction .list-symbol li > .listLv li::before {width:5px; height:5px; top:20px;}
+
+@media screen and (max-width: 640px) {
+	.introduction .list-symbol>li { padding: 210px 20px 50px;}
+}
+
+
+/* 누리는 학습 */
+.introduction .edu01 li:nth-child(1)::after {width:72px; height:69px;background-position: -12px -716px;}
+.introduction .edu01 li:nth-child(2)::after {width: 72px; height:68px; background-position: -246px -716px;}
+.introduction .edu01 li:nth-child(3)::after {width: 68px; height:66px; background-position: -130px -716px;}
+.introduction .edu01 li:nth-child(4)::after {width: 70px; height:68px; background-position: -361px -716px;}
+.introduction .edu01 li:nth-child(5)::after {width: 70px; height:65px; background-position: -478px -716px;}
+.introduction .edu01 li:nth-child(6)::after {width: 70px; height:69px; background-position: -593px -716px;}
+.introduction .edu01 li:nth-child(7)::after {width: 70px; height:69px; background-position: -12px -830px;}
+.introduction .edu01 li:nth-child(8)::after {width: 70px; height:69px; background-position: -130px -830px;}
+.introduction .edu01 li:nth-child(9)::after {width: 70px; height:69px; background-position: -246px -830px;}
+.introduction .edu01 li:nth-child(10)::after {width: 70px; height:69px; background-position: -361px -830px;}
+.introduction .edu01 li:nth-child(11)::after {width: 70px; height:69px; background-position: -478px -830px;}
+
+
+/* 자라는 학습 */
+.introduction .edu02 li:nth-child(1)::after {width: 72px; height: 69px; background-position: -12px -951px;}
+.introduction .edu02 li:nth-child(2)::after {width: 69px; height: 69px; background-position: -130px -951px;}
+.introduction .edu02 li:nth-child(3)::after {width: 68px; height: 68px; background-position: -246px -951px;}
+.introduction .edu02 li:nth-child(4)::after {width: 69px; height: 69px; background-position: -361px -951px;}
+.introduction .edu02 li:nth-child(5)::after {width: 70px; height: 62px; background-position: -478px -951px;}
+.introduction .edu02 li:nth-child(6)::after {width: 69px; height: 65px; background-position: -593px -951px;}
+.introduction .edu02 li:nth-child(7)::after {width: 69px; height: 65px; background-position: -12px -1058px;}
+.introduction .edu02 li:nth-child(8)::after {width: 69px; height: 65px; background-position: -130px -1058px;}
+
+/* 나누는 학습 */
+.introduction .edu03 li:nth-child(1)::after {width:68px; height:68px; background-position: -248px -1058px;}
+.introduction .edu03 li:nth-child(2)::after {width:72px; height:68px; background-position: -362px -1058px;}
+.introduction .edu03 li:nth-child(3)::after {width:70px; height:68px; background-position: -364px -1254px;}
+.introduction .edu03 li:nth-child(4)::after {width:72px; height:66px; background-position: -479px -1254px;}
+.introduction .edu03 li:nth-child(5)::after {width:70px; height:66px; background-position: -593px -1254px;}
+.introduction .edu03 li:nth-child(6)::after {width:70px; height:68px; background-position: -12px -1354px;}
+.introduction .edu03 li:nth-child(7)::after {width:70px; height:68px; background-position: -248px -1254px;}
+
+/* 내리는 학습 */
+.introduction .edu04 li:nth-child(1)::after {width:69px; height:66px; background-position: -12px -1058px;}
+.introduction .edu04 li:nth-child(2)::after {width:69px; height:66px; background-position: -130px -1058px;}
+.introduction .edu04 li:nth-child(3)::after {width:69px; height:65px; background-position: -246px -1058px;}
+.introduction .edu04 li:nth-child(4)::after {width:58px; height:69px; background-position: -361px -1058px;}
+
+
+/* 강사등록신청 */
+.tregistration .process_list {max-width: 80%; margin: 0 auto 40px;}
+@media screen and (max-width: 1025px) {
+.tregistration .process_list {max-width: 100%; margin: 0;}
+}
+
+/* 등록신청 글쓰기 221229 */
+#frm h6.titLv3 {float: left;}
+#frm .skinBtnBo_box {margin-bottom: 0px;}
+#frm #license .skinIptTxt {width: 100%;}
+/*  221122 수정 시작 */
+/* 강좌정보 */
+#sub .course-info {margin-top: 30px;}
+#sub .course-info a {position: relative;display: inline-block; border: 1px solid #aaa; border-radius: 5px; font-size:16px; text-decoration: none;}
+#sub .course-info a.on { color: #26498c; font-weight: 700;}
+#sub .course-info a.on::after {content: ''; position: absolute; width: 100%; height: 100%; left: 0px; top:0px; border: 3px solid #26498c;border-radius: 5px;}
+#sub .course-info dl {margin: 5px 0;}
+#sub .course-info dl dt {float: left; color: #333; font-weight:500; font-size: 18px; vertical-align: top; min-width: 87px; margin-right: 18px; text-align: right; padding-top: 4px;}
+#sub .course-info dl dd a { width: 110px; min-height: 45px; text-align: center; line-height: 43px; background: #fff; margin: 8px;}
+#sub .course-info dl dd {display: flex; flex: 1; flex-wrap: wrap; position: relative;}
+#sub .course-info .kind-list {position: relative;}
+#sub .course-info .kind-list a {position: relative; padding-top: 55px; margin: 8px 9px;}
+#sub .course-info .kind-list a::before{ content:''; position: absolute; top: 16px; left: 50%; transform: translateX(-50%); background: url(/page/injae/imgs/common/sp_injae.png) no-repeat -13px -1172px;}
+#sub .course-info .kind-list a:nth-child(1):before{width:38px; height:38px; background-position: -13px -1172px; }
+#sub .course-info .kind-list a:nth-child(2):before{width:38px; height:38px; background-position: -71px -1172px; }
+#sub .course-info .kind-list a:nth-child(3):before{width:43px; height:43px; background-position: -129px -1172px; }
+#sub .course-info .kind-list a:nth-child(4):before{width:41px; height: 41px; background-position: -189px -1172px; }
+#sub .course-info .kind-list a:nth-child(5):before{width:45px; height:45px; background-position: -243px -1172px; }
+#sub .course-info .kind-list a:nth-child(6):before{width:38px; height:38px; background-position: -291px -1172px; }
+#sub .course-info .kind-list a:nth-child(7):before{width:44px; height:44px; background-position: -341px -1172px; }
+/* 221217 추가 */
+#sub .course-info div > dl { display: inline-block;}
+#sub .course-info div > dl + dl { margin-left: 20px;}
+
+#sub .course-list td {padding: 2rem 1rem;}
+
+
+
+@media screen and (min-width: 640px) {
+  #sub .course-info { padding: 0px 36px 10px}
+  #sub .course-info .local-list a.all{ line-height: 98px;}
+  #sub .course-info.boSrchArea .boSrch {width: 100%;}
+  #sub .course-info.boSrchArea .boSrch-btnBo {width: 160px !important;}
+  #sub .course-info.boSrchArea .boSrch-iptTxt { width: calc(100% - 25% - 160px);}
+  #sub .course-info dl dd a.all { width: 110px; height: 100px;}
+  #sub .course-info dd > .skinSelectBox { min-width: 200px;}
+}
+
+@media screen and (max-width: 639px) {
+	#sub .course-info dl {position: relative;}
+	#sub .course-info dl dt:not(.f-left) { float: none;  display: block; text-align: left; width: 100%; }
+	#sub .course-info dl dd a  {width: 100px; min-height: 40px;}
+	#sub .course-info a.all {position: absolute; bottom: 100%; right: 8px;}
+	#sub .course-info {padding: 1rem 1.8rem; padding: 2rem 1.8rem 5rem;}
+	#sub .course-info a { font-size: 14px;}
+	#sub .course-info dl dt {font-size: 16px; padding-left: 10px; padding-bottom: 10px;}
+	#sub .course-info .kind-list a { padding-top: 50px; margin: 10px;}
+	#sub .course-info .kind-list a.all { position: absolute; bottom: 100%; right: 3px; padding: 0; margin-bottom: 10px;}
+	#sub .course-info .kind-list a.all:before {content: none;}
+	#sub .course-info dd > .skinSelectBox { min-width: unset;}
+	#sub .course-info .skinIptTxt,
+	#sub .course-info .skinSelectBox { font-size: 14px; line-height: 40px; height: 40px;}
+	#sub .course-info .skinBtnBo.boSrch-btnBo { line-height: 40px; height: 40px;}
+	/* 221217 추가 */
+	#sub .course-info div > dl { display: block;}
+	#sub .course-info div > dl + dl { margin-left: 0;}
+}
+
+@media screen and (max-width: 424px) {
+	#sub .course-info dl dd a  {width: 90px; font-size: 13px; margin: 5px;}
+	#sub .course-info .kind-list a { padding-top: 50px; margin: 6.5px;}
+}
+
+/* 기관정보 */
+.search-map { margin: 30px 0; display: flex; justify-content: space-between;}
+.search-map .img-box { width: 58%;}
+.search-map img {width: 100%;}
+.search-map .boSrchArea { width: 50%; margin-bottom: 0; margin-left: 20px; align-items: stretch;}
+.agency-info .boSrchArea .boSrch {float: none !important; width: 100%;}
+.agency-info .boSrchArea dl { display: flex; align-items: center; width: 100%;}
+#sub .agency-info .boSrchArea .skinSelectBox { width: 32%; margin: 20px 0 30px;}
+#sub .agency-info .boSrchArea .skinSelectBox + .skinSelectBox { margin-left: 1%;}
+.agency-info .boSrchArea dt { font-size: 18px; color: #333; font-weight: 700; min-width: 100px;  text-align: right;}
+.agency-info .boSrchArea dd { flex: 2; margin-left: 50px;}
+.agency-info .boSrchArea .boSrch-iptTxt {  width: calc(100% - 84px); }
+#sub .search-map .boSrchArea { padding: 30px 50px 30px;}
+#sub .search-map  a {position: relative;display: inline-block; border: 1px solid #aaa; border-radius: 5px; font-size:16px; text-decoration: none;}
+#sub .search-map  a.on { color: #26498c; font-weight: 700;}
+#sub .search-map  a.on::after {content: ''; position: absolute; width: 101%; height: 102%; left: 50%; top:50%; transform: translate(-50%, -50%); border: 3px solid #26498c; border-radius: 5px;}
+#sub .search-map  dl {flex-direction: column; justify-content: flex-start; align-items: flex-start; padding-bottom: 20px;}
+#sub .search-map  dl dt { text-align: left; margin-bottom: 20px;}
+#sub .search-map  dl dd {position: relative;}
+#sub .search-map  dl dd a{ width: 30%; min-height: 45px; text-align: center; line-height: 43px; background: #fff; margin-bottom: 10px;}
+#sub .search-map  dl dd a.all { width: 100%; height: 45px; line-height: 45px;}
+#sub .search-map  dl dd {display: flex;flex-wrap: wrap;  margin-left: 0; justify-content: space-between; padding-bottom: 10px; border-bottom:1px solid #ddd;}
+#sub .search-map .boSrch-iptTxt {  width: calc(100% - 70px); }
+#sub .search-map p {font-size: 14px; color: #888; margin-top: 5px;}
+
+
+/* 221217 추가 */
+.agency-info .map-area { background: url(./../imgs/sub/map.png) no-repeat 0 0; display: block; width: 511px; height: 520px; background-size: cover; position: relative; margin: 30px auto 38px; transition: all 0.4s ease-in-out;}
+.agency-info .map-area .area { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);background-size: contain; cursor: pointer; background-repeat: no-repeat;}
+.agency-info .map-area .area-01 { width: 112px; height:69px;margin-top: -30.7%; margin-left: -38.9%;}
+.agency-info .map-area .area-02 { width: 106px; height:100px;margin-top: -26.8%; margin-left: -25.1%;}
+.agency-info .map-area .area-03 { width: 76px; height: 99px; margin-top: -26.2%; margin-left: -9.1%;}
+.agency-info .map-area .area-04 { width: 87px; height: 130px; margin-top: -38.5%; margin-left: 10.2%}
+.agency-info .map-area .area-05 { width: 117px; height: 116px; margin-top: -10.9%; margin-left: -22.2%;}
+.agency-info .map-area .area-06 { width: 122px; height: 169px;  margin-top: -20.6%; margin-left: 0.9%;}
+.agency-info .map-area .area-07 { width: 44px; height: 26px; margin-top: -24.4%; margin-left: 15%}
+.agency-info .map-area .area-08 { width: 250px; height: 117px; margin-top: -0.8%; margin-left:-8.6%;}
+.agency-info .map-area .area-09 { width: 92px; height: 85px;  margin-top: -14.7%; margin-left:18.2%; background-size: auto 100%;}
+.agency-info .map-area .area-10 { width: 126px; height: 107px; margin-top: 14.1%; margin-left:-11.3%; background-size: auto 100%;}
+.agency-info .map-area .area-11 { width: 121px; height: 163px; margin-top: 13%; margin-left: 11.3%;}
+.agency-info .map-area .area-12 { width: 113px; height: 122px; margin-top: 4.1%; margin-left: 27.3%;}
+.agency-info .map-area .area-13 { width: 111px; height: 98px;  margin-top: 23.1%; margin-left: -14.8%;}
+.agency-info .map-area .area-14 { width: 180px; height: 117px; margin-top: 31.8%; margin-left: 9.8%;}
+.agency-info .map-area .area-15 { width: 118px; height: 125px; margin-top: 22.8%; margin-left: 22.8%;}
+.agency-info .map-area .area-16 { width: 49px; height: 52px; margin-top: 15.3%; margin-left: 37.1%;}
+.agency-info .map-area .area-17 { width: 49px; height: 81px; margin-top: 34%; margin-left:32.1%; z-index: 2;}
+.agency-info .map-area .area-18 { width: 119px; height: 134px; margin-top: 31%; margin-left: 38.2%;}
+
+.agency-info .map-area .area-01.active,
+.agency-info .map-area .area-01:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-01.svg);}
+.agency-info .map-area .area-02.active,
+.agency-info .map-area .area-02:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-02.svg);}
+.agency-info .map-area .area-03.active,
+.agency-info .map-area .area-03:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-03.svg);}
+.agency-info .map-area .area-04.active,
+.agency-info .map-area .area-04:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-04.svg);}
+.agency-info .map-area .area-05.active,
+.agency-info .map-area .area-05:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-05.svg);}
+.agency-info .map-area .area-06.active,
+.agency-info .map-area .area-06:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-06.svg);}
+.agency-info .map-area .area-07.active,
+.agency-info .map-area .area-07:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-07.svg);}
+.agency-info .map-area .area-08.active,
+.agency-info .map-area .area-08:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-08.svg);}
+.agency-info .map-area .area-09.active,
+.agency-info .map-area .area-09:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-09.svg);}
+.agency-info .map-area .area-10.active,
+.agency-info .map-area .area-10:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-10.svg);}
+.agency-info .map-area .area-11.active,
+.agency-info .map-area .area-11:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-11.svg);}
+.agency-info .map-area .area-12.active,
+.agency-info .map-area .area-12:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-12.svg);}
+.agency-info .map-area .area-13.active,
+.agency-info .map-area .area-13:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-13.svg);}
+.agency-info .map-area .area-14.active,
+.agency-info .map-area .area-14:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-14.svg);}
+.agency-info .map-area .area-15.active,
+.agency-info .map-area .area-15:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-15.svg);}
+.agency-info .map-area .area-16.active,
+.agency-info .map-area .area-16:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-16.svg);}
+.agency-info .map-area .area-17.active,
+.agency-info .map-area .area-17:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-17.svg);}
+.agency-info .map-area .area-18.active,
+.agency-info .map-area .area-18:hover {background-image:url(/page/injae/imgs/sub/location/ico-location-18.svg);}
+
+
+@media screen and (max-width: 768px) {
+	.search-map {flex-direction: column;}
+	.search-map .img-box { width: 100%;}
+	.search-map .boSrchArea { width: 100%; margin-left: 0; margin: 10px 0;}
+}
+@media screen and (max-width: 689px) {
+	#sub .agency-info .boSrchArea {padding: 3.7rem 3.9rem}
+	.search-map { margin: 30px 0 0;}
+	.agency-info .boSrchArea dl { flex-direction: column; align-items: flex-start;}
+	.agency-info .boSrchArea dl + dl { margin-top: 25px;}
+	.agency-info .boSrchArea dt {font-size: 16px; text-align: left; margin-bottom: 20px;}
+	#sub .search-map >.boSrchArea {padding: 50px 39px 30px;}
+	#sub .search-map dl dt {font-size: 16px;}
+	#sub .search-map dl dd a.all {position: absolute; bottom: 100%; right: 0; width: 30%; }
+	#sub .search-map dl dd a { margin-bottom: 20px;}
+	#sub .search-map p {font-size: 13px;}
+	#sub .agency-info .boSrchArea .skinSelectBox + .skinSelectBox { margin-left: 0;}
+	.agency-info .boSrchArea dd {width: 100%; margin-left: 0;}
+	#sub .agency-info .boSrchArea .skinSelectBox {width: 100%; margin: 5px 0;}
+	.agency-info .boSrchArea .boSrch-iptTxt {width: calc(100% - 68px);}
+	#sub .agency-info .skinIptTxt,
+	#sub .agency-info .skinSelectBox { font-size: 14px; line-height: 40px; height: 40px;}
+	#sub .agency-info .skinBtnBo.boSrch-btnBo { line-height: 40px; height: 40px;}
+
+	/* 221217 추가 */
+	.agency-info .map-area { width: 413px; height: 431px; background-size: contain; margin: 50px auto;}
+	.agency-info .map-area .area-01 { width: 92px; height:58px; margin-top: -31.7%; margin-left: -38.9%;}
+	.agency-info .map-area .area-02 { width: 86px; height:82px; margin-top: -27.8%; margin-left: -25.1%;}
+    .agency-info .map-area .area-03 { width: 62px; height: 82px; margin-top: -27.2%; margin-left: -9.1%;}
+	.agency-info .map-area .area-04 { width: 69px; height: 104px; margin-top: -39.5%; margin-left: 10.2%}
+	.agency-info .map-area .area-05 { width: 94px; height: 94px; margin-top: -11.9%; margin-left: -22.2%;}
+	.agency-info .map-area .area-06 { width: 98px; height: 138px;  margin-top: -21.6%; margin-left: 1%;}
+	.agency-info .map-area .area-07 { width: 38px; height: 22px; margin-top: -25.4%; margin-left: 15%}
+	.agency-info .map-area .area-08 { width: 201px; height: 89px; margin-top: -2.6%; margin-left:-8.6%;}
+	.agency-info .map-area .area-09 { width: 76px; height: 71px;  margin-top: -15.7%; margin-left:18.2%;}
+	.agency-info .map-area .area-10 { width: 102px; height: 86px; margin-top: 13.1%; margin-left:-11.3%;}
+	.agency-info .map-area .area-11 { width: 100px; height: 129px; margin-top: 11%; margin-left: 11.3%;}
+	.agency-info .map-area .area-12 { width: 91px; height: 98px; margin-top: 2.8%; margin-left: 27.3%;}
+	.agency-info .map-area .area-13 { width: 90px; height: 82px;  margin-top: 22.1%; margin-left: -14.8%;}
+	.agency-info .map-area .area-14 { width: 148px; height: 96px; margin-top: 30.4%; margin-left: 9.8%;}
+	.agency-info .map-area .area-15 { width: 86px; height: 100px; margin-top: 21.8%; margin-left: 21.9%;}
+	.agency-info .map-area .area-16 { width: 40px; height: 52px; margin-top: 15.3%; margin-left: 37.1%;}
+	.agency-info .map-area .area-17 { width: 53px; height: 65px; margin-top: 32.3%; margin-left: 33.8%;}
+	.agency-info .map-area .area-18 { width: 96px; height: 105px; margin-top: 29.3%; margin-left: 38.2%;}
+}
+
+@media screen and (max-width: 430px) {
+	.agency-info .map-area { width: 350px; height: 400px;}
+	.agency-info .map-area .area-01 { width: 80px; height:50px; margin-top: -36.7%; margin-left: -38.9%;}
+	.agency-info .map-area .area-02 { width: 80px; height:69px; margin-top: -32.8%; margin-left: -24.1%;}
+    .agency-info .map-area .area-03 { width: 53px; height: 78px; margin-top: -31.2%; margin-left: -9.1%;}
+	.agency-info .map-area .area-04 { width: 61px; height: 89px; margin-top: -44.5%; margin-left: 10.2%}
+	.agency-info .map-area .area-05 { width: 79px; height: 94px; margin-top: -14.9%; margin-left: -22.2%;}
+	.agency-info .map-area .area-06 { width: 92px; height: 113px;  margin-top: -26.8%; margin-left: 2.4%;}
+	.agency-info .map-area .area-07 { width: 35px; height: 19px; margin-top: -30.4%; margin-left: 15%}
+	.agency-info .map-area .area-08 { width: 171px; height: 89px; margin-top: -5.6%; margin-left:-8.6%;}
+	.agency-info .map-area .area-09 { width: 70px; height: 59px;  margin-top: -20.7%; margin-left:19.2%;}
+	.agency-info .map-area .area-10 { width: 94px; height: 73px; margin-top: 8.1%; margin-left:-10.3%;}
+	.agency-info .map-area .area-11 { width: 91px; height: 107px; margin-top: 6%; margin-left: 12.3%;}
+	.agency-info .map-area .area-12 { width: 77px; height: 84px; margin-top: -2.2%; margin-left: 27.3%;}
+	.agency-info .map-area .area-13 { width: 90px; height: 66px;  margin-top: 16.9%; margin-left: -12.9%;}
+	.agency-info .map-area .area-14 { width: 139px; height: 77px; margin-top: 25%; margin-left: 11.8%;}
+	.agency-info .map-area .area-15 { width: 86px; height: 84px; margin-top: 16.8%; margin-left: 23.9%;}
+	.agency-info .map-area .area-16 { width: 34px; height: 44px; margin-top: 10.3%; margin-left: 37.1%;}
+	.agency-info .map-area .area-17 { width: 53px; height: 55px; margin-top:  27.3%; margin-left: 34.8%;}
+	.agency-info .map-area .area-18 { width: 80px; height: 88px; margin-top: 24.3%; margin-left: 38.2%;}
+}
+
+/* 221217 추가 끝 */
+
+/*** 인평원소개 ***/
+
+/* 인사말 */
+.greetings .title_box { text-align: left; padding-left: 0;}
+.greetings .title_box .ico-ci {display: inline-block; width: 90px; height: 42px;}
+.greetings .title_box .ico-ci img { max-width: 100%; height: auto;}
+.greetings .title_box h3 {font-size: 29px; text-align: left; line-height: 1.5; letter-spacing: 0;}
+.greetings .cont-box {position: relative; padding: 30px 0; margin-bottom: 60px;}
+.greetings .cont-box::before,
+.greetings .cont-box::after {content:""; position: absolute; width: 30px; height: 6px; left: 0; background: #26498c;}
+.greetings .cont-box::before {top: 0;}
+.greetings .cont-box::after {bottom: 0;}
+.greetings .pgraph {font-size: 18px;}
+
+/* 미션&비전 */
+.vision .cont-box { position: relative; display: flex; justify-content: center; background: #eeeff4; padding-top: 42px; margin-top:10px;}
+#sub .vision .cont-box dl { background: #fff; text-align: center; padding: 57px; width: 450px; margin-bottom: -30px; box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.1);}
+#sub .vision .cont-box dl + dl { margin-left: 50px;}
+#sub .vision .cont-box dl dt { float: none; min-width: auto; text-align: center; width: 100%; color: #111; font-size: 30px;font-weight:700; margin-bottom: 20px;}
+#sub .vision .cont-box dl dd { font-size: 20px; line-height: 1.7; color: #333;}
+#sub .vision .cont-box + .img-wrap { margin-top: 94px;}
+
+@media screen and (max-width: 768px) {
+	#sub .vision .cont-box dl { width: 45%; margin-bottom: -30px; padding: 20px 20px 30px;}
+	#sub .vision .cont-box dl + dl { margin-left: 20px;}
+	#sub .vision .cont-box dl dt {font-size: 20px;}
+	#sub .vision .cont-box dl dd {font-size: 14px;}
+}
+
+/* Ci */
+.ci-info {}
+.ci-info .cont-box:not(.full) {display: flex; width: 100%; }
+.ci-info .cont-box .box {flex: 1}
+.ci-info .cont-box .box + .box {margin-left: 2%;}
+.ci-info .cont-box { margin-top: 20px;}
+.ci-info .cont-box .box-line {display: flex;  align-items: center; justify-content: center;}
+.ci-info .box-line { position: relative; min-height: 244px; width: 100%;}
+
+@media screen and (max-width: 768px) {
+	.ci-info .cont-box:not(.full) {display: block;}
+	.ci-info .cont-box .box-line.color-guide {display: block;  align-items: center; justify-content: center;}
+	.ci-info .cont-box .box + .box {margin-left: 0;}
+}
+
+.apply-guide .box-line { min-height: 402px; padding-bottom: 50px;}
+.apply-guide .box-line p {position: absolute; bottom: 0; width: 100%; text-align: center;background:#f6f6f6; padding: 13px 10px 12px; border-top: 1px solid #ccc;}
+
+.color-guide {display: table-cell; text-align: center;}
+.color-guide dl { position: relative; display: inline-block; width: 30%;text-align: left; margin: 67px 0;  padding: 10px 0 20px 129px;}
+.color-guide dl::before { content:""; position: absolute; top:0; left: 0; width: 107px; height: 107px; border-radius: 50%; background-color: #003b86;}
+.color-guide dl dt {color: #666; font-size: 18px; font-weight: 700;}
+.color-guide dl dd{color: #333; }
+.color-guide dl:nth-child(2):before {background-color: #E9A016;}
+.color-guide dl:nth-child(3):before {background-color: #2CAA7B;}
+
+@media screen and (max-width: 768px) {
+	.color-guide dl {width: 50%; margin: 30px 0;}
+}
+
+
+/* 연혁 */
+.history {margin-bottom: 30px;}/*221214 추가 */
+.history .history-wrap {position: relative; border: 1px solid #ccc; max-width: 540px; margin: 0 auto; border-top: 0;}
+.history h3 { font-size:36px; color: #111; font-weight:700;}
+.history .history-wrap .title-area {background: #f7f9fe;padding: 48px 10px 52px; text-align: center;}
+.history .history-wrap::before {content: ""; position: absolute; left: -0.2%; top: 0; height: 5px; width: 100.5%; background: #26498c;}
+
+.history .cont-box {overflow:hidden; margin-bottom: 40px;}
+.history .cont-box:nth-of-type(1) .history-wrap::after {content: ""; position: absolute; bottom: -100px; left: 50%; transform: translateX(-50%); height: 100px; width: 561px; background: url(./../imgs/sub/bg-history.png) no-repeat center center; }
+.history .cont-box:nth-of-type(1) .history-wrap {margin-bottom: 100px;}
+.history .cont-box:nth-of-type(2) .box {float: left; width: 49%;} /*221214 수정 */
+.history .cont-box:nth-of-type(2) .box + .box {margin-left: 2%}
+.history .cont-box:nth-of-type(2) .box .history-wrap {max-width: 100%;}
+
+.history-wrap .year{ font-size: 36px; color: #26498c; font-weight: 700; text-align: left; line-height: 1.44;}
+.history-wrap .date { display: inline-block; font-weight: 700; min-width: 88px; padding: 0 20px 0 30px; color: #333; vertical-align: top; letter-spacing: 0;}
+.history-wrap .notice { display: inline-block; color: #555; line-height: 1.5; font-weight: 400; word-break: break-all;}
+
+.history-list {padding: 50px 10px 50px 30px;}
+.history dl + dl {margin-top: 50px;}
+.history ol {position: relative; margin-top:20px;}
+.history ol::before {content:''; position: absolute; top: 0; left: 10px; width: 1px; height: 100%; background: #26498c;}
+.history ol >li + li { margin-top: 20px;}
+.history .listLv3 {display: inline-block; color:#555;}
+
+/* 221214 추가 시작 */
+@media (max-width: 900px) {
+	.history-wrap .notice { display: block; padding: 0 10px 0 30px;}
+	.history h3 { font-size:30px;}
+}
+
+@media (max-width: 767px) {
+	.history h3 { font-size:25px;}
+	.history .cont-box:nth-of-type(2) .box {float: none;}
+	.history .cont-box:nth-of-type(1) .history-wrap {max-width: 100%;}
+	.history .cont-box:nth-of-type(1) .history-wrap {margin-bottom: 20px;}
+	.history .cont-box:nth-of-type(1) .history-wrap::after {content: none;}
+	.history .cont-box:nth-of-type(2) .box  {width: 100%;}
+	.history .cont-box:nth-of-type(2) .box + .box {margin-left: 0; margin-top: 20px;}
+}
+
+/* 221214 추가 끝 */
+
+
+/* 221214 수정 전체 */
+/* 조직도 */
+.organization-chart {}
+.organization-chart .chart-top { }
+.organization-chart .chart-bottom { display: flex; justify-content: space-between; margin: 50px 0 80px; padding-bottom: 110px;}
+.organization-chart .round-title { display: inline-block; min-width: 330px; height: 60px; line-height: 60px; background: #26498c; border-radius:100px; text-align: center; color: #fff; font-weight: 300; font-size: 20px;}
+.organization-chart .leaders {width: 330px; margin: 0 auto;}
+.organization-chart .leaders dt { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 330px; margin-bottom: 5px; background: url(/page/injae/imgs/sub/bg-leader.png) no-repeat 0 0; font-size: 24px; color:#26498c; font-weight:700; line-height: 1.46;}
+.organization-chart .leaders .round-title { background-image: linear-gradient(100deg, #79a07c, #3883ff);}
+.organization-chart .chart-bottom .depth01 {position: relative; display: flex; flex-direction: column;}
+.organization-chart .chart-bottom .depth01 + .depth01::after {content: ''; position: absolute; top: 30px; right:100%; width: 100%; height: 1px; background: url(/page/injae/imgs/sub/bg-line-dot.png) 0 0 repeat-x; z-index: -1; }
+.organization-chart .chart-bottom dt {position: relative; margin-bottom: 100px; flex-grow: 1;}
+.organization-chart .chart-bottom dt::before {content: ''; position: absolute; top: 60px; left: 50%; transform: translateX(-50%); width: 171px; height: 100px; background: url(/page/injae/imgs/sub/bg-line-dot-02.png) no-repeat 0 0; z-index: -1;}
+.organization-chart .chart-bottom dd span { position: relative;display: inline-block; min-width: 48%; min-height: 60px; font-size: 20px; line-height: 58px; color: #26498c; border: solid 2px #26498c; border-radius: 100px;  text-align: center;}
+.organization-chart .chart-bottom dd span + span {margin-left: 10px;}
+.organization-chart .chart-bottom dd span:not(.depth02)::before {content: ''; border:  1px solid #ccc; position: absolute; width: calc(100% - 5%); height:calc(100% - 15%); border-radius: 100px; top: 50%; left: 50%; transform: translate(-50%, -50%);} /* 221214 수정 */
+.organization-chart .chart-bottom .depth02 { position: absolute; min-width: 160px; left: 0; top: 110px; background-color: #eeeeee;  border-color: #eeeeee}
+.organization-chart .chart-bottom .depth02::before {content:''; position: absolute; bottom: 100%; left: 50%; width: 50%; height: 1px; background: url(/page/injae/imgs/sub/bg-line-dot.png) repeat 0 0; transform: translateX(-50%) rotate(-90deg); z-index: -1;}
+
+@media  (max-width: 1024px) {
+	.organization-chart .chart-top .leaders dd {margin-top: 20px;}
+	.organization-chart .chart-bottom {flex-direction: column; justify-content: normal; }
+	.organization-chart .chart-bottom .depth01  + .depth01 {margin-top: 80px}
+	.organization-chart .chart-bottom .depth01:nth-child(1)::before {width:10%; top: 0;}
+	.organization-chart .chart-bottom .depth01::before {content: ''; position: absolute; top: -100px; left: 50%; transform: translateX(-50%) rotate(90deg); width: calc(100% - 70%); height: 1px; background: url(/page/injae/imgs/sub/bg-line-dot.png) 0 0 repeat-x; z-index: -1;margin-left: -0.5px;}
+	.organization-chart .chart-bottom .depth01 dt {min-width: unset; width: 330px; margin: 0 auto 100px;}
+	.organization-chart .chart-bottom dd {text-align: center;}
+	.organization-chart .chart-bottom dd span {min-width: 17%;}
+	.organization-chart .chart-bottom dd span:not(.depth02)::before {width: calc(100% - 5%);}
+}
+
+@media (max-width:900px) {
+	.organization-chart .chart-bottom dd span {min-width: 17%;}
+	.organization-chart .chart-bottom dd span:not(.depth02)::before {width: calc(100% - 5%);}
+	.organization-chart .chart-bottom .depth01:nth-child(1)::before {width: calc(100% - 70%); top: 0;}
+	.organization-chart .chart-bottom .depth01::before {width: calc(100% - 60%);}
+}
+
+@media (max-width: 820px) {
+	.organization-chart .chart-bottom dd span {min-width: 25%;}
+	.organization-chart .chart-bottom dd span:not(.depth02)::before {width: calc(100% - 4.5%);}
+}
+
+@media (max-width: 600px) {
+	.organization-chart .chart-bottom dd span {min-width: 40%;}
+	.organization-chart .chart-bottom .depth01::before {width: calc(100% - 40%);}
+	.organization-chart .chart-bottom dd span:not(.depth02)::before {width: calc(100% - 5%);}
+}
+
+@media (max-width: 340px) {
+	.organization-chart .chart-bottom .depth01 dt { width: 280px; }
+	.organization-chart .round-title { width: 280px; min-width: unset;}
+	.organization-chart .chart-bottom dd span {min-width: 45%;}
+	.organization-chart .chart-bottom dd span:not(.depth02)::before {width: calc(100% - 7%);}
+	.organization-chart .chart-bottom .depth02::before {left: 24%}
+	.organization-chart .chart-bottom .depth02 {min-width: 130px; top: 100px;}
+}
+/* 221214 수정 전체 끝 */
+
+
+
+
+
+
+/* 비전체계 역대 이사장 원장 */
+.leader-history .cont-box { width: 100%; display: flex; flex-wrap: wrap; text-align: center; margin-top:20px;}
+.leader-history .box { position: relative; width: 24%;min-height: 277px; border: 1px solid #a0acc4; border-top: 0; margin-bottom: 20px; padding-bottom:20px; margin-right: 1.3%;}
+.leader-history .box:nth-child(4n){margin-right: 0;}
+.leader-history .box .title-area {background: #f7f9fe;padding: 15px 10px 10px; text-align: center; color: #111; border-bottom: 1px solid #a0acc4;}
+.leader-history .box::before {content: ""; position: absolute; left: 0; top: 0; height: 5px; width: 100%; background: #26498c;}
+.leader-history .img { width: 125px; height: 125px; margin: 20px auto 10px; border:1px solid #ddd; border-radius: 50%; object-fit: cover; overflow: hidden; background-color: #eeee;}
+.leader-history .date,
+.leader-history .name {display: block; color: #333333; line-height: 1.5;}
+
+.leader-history .only-text .box { min-height: auto;}
+.leader-history .only-text .box p {padding: 30px 10px 10px;}
+
+@media screen and (max-width: 768px) {
+	.leader-history .box { width: 48%; margin-right: 4%; }
+	.leader-history .box:nth-child(2n) {margin-right: 0;}
+	.leader-history .box:nth-child(4n){margin-right: auto;}
+}
+
+/* 걸어온길 명예전당 */
+.hall-fame .pageTab{margin: 50px auto;}
+.hall-fame .title_box { padding: 20px 0 10px;}
+.hall-fame .title_box h3 {  position: relative;color: #26498c;}
+.hall-fame .title_box h3::after,
+.hall-fame .title_box h3::before {content:'';display: inline-block; width: 32px; height: 52px; background: url(/page/injae/imgs/sub/ico-double-quotation-first.png) no-repeat 0 0; margin: 0 30px;}
+.hall-fame .title_box h3::after {background: url(/page/injae/imgs/sub/ico-double-quotation-last.png) no-repeat 0 0;}
+.hall-fame .cont-box { width: 100%; display: flex; flex-wrap: wrap; text-align: center; margin-top:20px;}
+.hall-fame .box { position: relative; width: 24%;min-height: 277px; border: 1px solid #a0acc4; margin-bottom: 20px; margin-right: 1.3%;}
+.hall-fame .box:nth-child(4n){margin-right: 0;}
+.hall-fame .box figure { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;}
+.hall-fame .box .name {font-size: 18px; color: #333; font-weight: 700; margin-top: 20px;}
+
+.hall-fame .cont-box.leaders .box { padding: 20px;}
+.hall-fame .cont-box.leaders .box figure {justify-content: flex-start;}
+.hall-fame .cont-box.leaders .box .name {margin-top:10px;}
+.hall-fame .cont-box.leaders .box ul { border-top: 1px solid #a0acc4; text-align: left; padding-top: 20px; margin-top:20px;}
+
+
+@media screen and (max-width: 768px) {
+	.hall-fame .box { width: 48%; margin-right: 4%; }
+	.hall-fame .box:nth-child(2n) {margin-right: 0;}
+	.hall-fame .box:nth-child(4n){margin-right: auto;}
+}
+
+/*  221218 추가 */
+@media screen and (max-width: 590px) {
+	.hall-fame .title_box h3 {font-size: 20px;}
+	.hall-fame .title_box h3::after,
+	.hall-fame .title_box h3::before {content:'';display: inline-block; width: 24px; height: 40px; margin: 0 10px; background-size: contain;}
+}
+
+
+
+#fame figure img {width: 140px; height: auto; margin-top: 15px;}
+#fame figcaption h5 {border-bottom: 1px dashed #ddd; padding: 0 0 10px 0; margin: 10px 0 10px 0; font-size: 18px; color: #272727;font-weight: 500;}
+#fame figcaption .symbol4 {text-align: left; padding: 0 30px 10px; position: relative; word-break: keep-all;}
+#fame figcaption .symbol4::before {content: "-"; position: absolute; top: 0; left: 20px;}
+
+
+
+/* 오시는 길 */
+.loaction .pageTab {margin: 50px auto;}
+.loaction-wrap { position: relative; margin-top: 20px; padding-right:30%; }
+.loaction-wrap .skbtn.ty04 { background: #fff !important;min-width: 220px;}
+.loaction-wrap .skbtn.ty04 span {color: #003b86 !important; font-weight: 700;}
+.loaction-wrap .map-area { border: 1px solid red;  height:500px; border:1px solid #ccc;}
+.loaction-wrap .loaction-info { position: absolute; top: 30px; right: 0; width: 450px; height: 430px; background: #003b86; color: #fff; padding: 20px; z-index:50}
+.loaction-wrap .loaction-info h4 { font-size: 20px; font-weight:700; text-align: left; margin: 30px 0 50px;}
+.loaction-wrap .loaction-info >ul { border-top: 1px solid #537bc8; padding: 35px 0 28px; margin-left: 10px; }
+.loaction-wrap .loaction-info ul:not(.listLv4)>li { padding-left: 23px; background: url(/page/injae/imgs/sub/icon-pin.png) no-repeat left top 4px; margin: 15px 0;}
+.loaction-wrap .loaction-info ul>li.pin { background-image: url(/page/injae/imgs/sub/icon-pin.png);}
+.loaction-wrap .loaction-info ul>li.phone { background-image: url(/page/injae/imgs/sub/icon-phone.png);}
+.loaction-wrap .loaction-info ul>li.subway {background-image: url(/page/injae/imgs/sub/icon-subway.png)}
+.loaction-wrap .loaction-info .listLv4 {color: #fff !important; padding-left: 0; padding-right: 80px; line-height: 1.3;}
+.loaction-wrap .loaction-info.typ02 h4 {margin-bottom:20px;}
+.loaction-wrap .loaction-info.typ02 > ul{ padding: 10px 0 14px;}
+
+@media screen and (max-width: 768px) {
+	.loaction-wrap {padding-right: 0;}
+	.loaction-wrap .loaction-info {position: unset; width: 100%;}
+}
+
+
+/* 열린경영 */
+.open-management {}
+.open-management .list-num  {counter-reset: section; color: #111; line-height: 1.5; margin: 50px 0; padding-left: 20px;}
+.open-management .list-num >li + li { margin-top: 20px;}
+.open-management .list-num >li::before { counter-increment: section; content: counter(section); display: inline-block; width:28px; height: 28px; background-color: #26498c; color: #fff; text-align: center; font-weight: 500; font-size: 17px; margin-right:16px;}
+.open-management .text-box { font-size: 18px; font-weight: 700; color: #111; }
+.open-management .text-box p + p { margin-top: 20px;}
+
+@media screen and (max-width: 768px) {
+	.open-management .list-num  {padding-left:10px;}
+	.open-management .list-num >li {font-size: 14px;}
+	.open-management .list-num >li::before { width:20px; height: 20px; line-height: 20px; font-size: 14px; margin-right: 10px;}
+	.open-management .list-num >li + li { margin-top: 10px;}
+	.open-management .text-box { font-size: 16px; margin-bottom: 40px;}
+}
+
+/* 단계별 추진체계 */
+.open-management .list-num.type02 >li { position: relative; display: flex; align-items: flex-start; padding-bottom: 80px; margin-bottom: 40px;}
+.open-management .list-num.type02 >li::after{content: ""; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 40px; height: 40px; background: url(/page/injae/imgs/common/icon-arrow-step.png) no-repeat 0 0;}
+.open-management .list-num.type02 >li:last-child:after {content: none;}
+.open-management .list-num.type02 >li:before { width: 90px; height:90px; border-radius: 10px; font-size: 36px; line-height: 90px; display: block; margin-right: 10px;}
+.open-management .list-num.type02 >li h4 {  border-radius: 10px; font-size: 24px; font-weight: 700; color: #26498c; border: 2px solid #26498c; background: #fff; text-align: center; height: 90px; min-width: 290px; line-height: 1.2; padding: 28px 30px 27px;}
+.open-management .list-num.type02 >li ul { display: flex; flex-direction: column; justify-content: center; flex:1; margin-left: 10px; padding: 8px 0 9px 20px; min-height: 90px;  border-radius: 10px; border: dashed 1px #d0d3db;background-color: #f5f5f5;}
+.open-management .list-num.type02 >li ul li { margin-bottom: 0;}
+
+@media screen and (max-width: 768px) {
+	.open-management .list-num.type02  {padding: 0 10px;}
+	.open-management .list-num.type02 >li { flex-direction: column; align-items: unset;}
+	.open-management .list-num.type02 >li::before { width: 60px; height: 60px; font-size: 30px; line-height: 60px; margin:  0 auto 20px;}
+	.open-management .list-num.type02 >li ul  {margin-left: 0; margin-top: 10px;}
+}
+
+
+/* etc 추가 페이지 작업 */
+/*  login  */
+#content.login-wrap {float: none !important; width: 100% !important; padding: 0 !important; } /* login 스타일 단독일 시 삭제해야함*/
+.login { max-width: 730px; margin: 50px auto; border-radius: 50px; border: solid 10px #f5f5f5; text-align: center; padding: 96px 20px 87px; background: #fff;}
+.login h2 { font-size: 30px; font-weight: 700; color: #111; margin-bottom: 17px;}
+.login p {font-size: 20px; color: #333;}
+.login .form-wrap {  max-width: 474px; margin: 80px auto 50px; text-align: left;}
+.login .form-wrap input[type="text"],
+.login .form-wrap input[type="password"] { width: 100%; font-size: 16px; border: 1px solid #666; height: 55px; padding: 16px 20px 16px 64px;}
+.login .form-wrap input[type="text"] { background: url(/page/injae/imgs/common/icon-user.png) no-repeat 20px center;}
+.login .form-wrap input[type="password"] { background: url(/page/injae/imgs/common/icon-lock.png) no-repeat 20px center;}
+.login .form-wrap input::placeholder { font-size: 16px; color: #aaa;}
+
+.login .form-wrap .field {margin-bottom: 16px;}
+.login .btn-wrap {  max-width: 474px; margin: 0 auto; }
+.login .btn-wrap .row { margin-bottom: 10px;}
+.login .btn-wrap .btn { float: none; display: inline-block; width: calc(100% / 2 - 6px); min-height: 60px; line-height:38px; padding: 10px 20px 10px; border-radius: 5px; margin: 0; font-size: 18px;  text-decoration: none;}
+.login .btn-wrap .btn-primary { color: #fff; background: #26498c;  border:1px solid #26498c;}
+.login .btn-wrap .btn-secondary { border:1px solid #666666; color: #333; background: #fff; font-size: 16px;}
+.login .btn-wrap .btn:only-child { width: 100%;}
+.login .btn-wrap .btn + .btn { margin-left: 6px;}
+
+/* 221128 수정 */
+/* checkbox style */
+.login .form-wrap input[type="checkbox"]  {position: absolute; width: 0; height: 0; border: 0; opacity: 0; -wenkit-appearance: none; -moz-appearance: none; appearance: none;}
+.login .checkbox {position: relative; display: inline-block; min-width:22px;min-height:22px;}
+.login .checkbox label {position: relative; font-size: 16px; color: #333; padding-left: 32px; cursor: pointer;}
+.login .checkbox label::before,
+.login .checkbox label::after{ content: ''; position: absolute;}
+.login .checkbox label::before {top: 0; left: 0; width: 22px; height: 22px; background: #fff; box-sizing: border-box; border: 1px solid #707070; border-radius:5px;}
+.login.checkbox input:checked ~ label::before { background: #26498c; border-color: #26498c; }
+.login .checkbox input:checked ~ label::after{ top: 4px; left: 4px; width: 14px; height: 13px;  background: url(/page/injae/imgs/common/icon-check.svg) no-repeat 0 0;}
+/* .checkbox input:checked ~ label::after{ top: 1px; left: 7px; width: 5px; height: 12px; border-top: 3px solid #fff; border-left: 3px solid #fff;transform: rotate(-137deg);  } */
+.login .checkbox input:disabled ~ label::before {background: #dddddd;}
+/* 221128 수정 끝 */
+
+@media screen and (max-width: 482px) {
+	.login { padding: 50px 15px; }
+	.login p {font-size: 16px;}
+	.login .form-wrap {margin: 50px 0 30px}
+	.login .btn-wrap .btn { font-size: 14px;  padding: 10px 5px 10px;}
+}
+
+@media screen and (max-width: 420px) {
+	.login .btn-wrap .btn { font-size: 13px;}
+}
+
+/* 221128 전체 수정 시작 */
+/*  회원가입 */
+#content.sign-up {float: none !important; width: 100% !important; padding: 0 !important;} /* login 스타일 단독일 시 삭제해야함*/
+.sign-up-step { max-width: 1492px; margin: 0 auto; display: flex; flex-wrap: nowrap; flex-direction: row; justify-content: center;} /* 수정 */
+.sign-up-step .step-item { position: relative; font-size: 24px; color: #888; font-weight: 300; padding: 10px 10px 8px 110px;}
+.sign-up-step li {position: relative; padding-right: 50px; margin: 10px 50px 10px 0;}
+.sign-up-step li::before{content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%);  width: 12px; height: 19px; background: url(/page/injae/imgs/common/icon-arrow-g.png) no-repeat 0 0;}
+.sign-up-step li:last-child{padding: 0; margin-right: 0;}
+.sign-up-step li:last-child::before { content: none;}
+.sign-up-step li .step-item::before { content: ''; position: absolute; left: 0; top: 0; width: 90px; height: 90px; border-radius: 50%; background: #aaaaaa; }
+.sign-up-step li .step-item::after { content: ''; position: absolute; top: 22px; left: 26px;  width: 42px; height: 43px; background-image: url(/page/injae/imgs/common/sp_injae.png); background-repeat: no-repeat; background-position-y: -1231px; background-position-x: -13px;}
+.sign-up-step li:nth-child(1) .step-item:after{ background-position-x: -13px; width: 35px; height: 44px; left: 28px; }
+.sign-up-step li:nth-child(2) .step-item:after{ background-position-x: -64px;  top: 25px; left: 26px; }
+.sign-up-step li:nth-child(3) .step-item:after{ background-position-x: -116px;  top: 28px; left: 29px; }
+.sign-up-step li:nth-child(4) .step-item:after{ background-position-x: -160px;  top: 26px; left: 26px; }
+.sign-up-step li span { display: block;}
+.sign-up-step li.active .step-item {color: #26498c;}
+.sign-up-step li.active .step-item::before {background-color: #26498c;}
+/* .agency .sign-up-step li:nth-child(2) { background-position-x: -209px;} */
+.agency .sign-up-step li:nth-child(2) .step-item::after { background-position-x: -209px;}
+
+
+/* step 공통 */
+.sign-up-step-cont {padding-top: 40px; padding-bottom: 60px;}
+.sign-up-step-cont .btn-wrap {margin: 50px auto 40px;}
+.sign-up-step-cont .btn-wrap .skinBtnBo {background: #26498c; color: #fff; height: 40px !important; line-height: 38px !important;border-radius: 5px;  min-width: 120px; border-color: #26498c;}
+.sign-up-step-cont .btn-wrap .skinBtnBo::before{content: none;}
+.sign-up-step-cont .btn-wrap .skinBtnBo-data-ng { background: #fff; color: #26498c;}
+
+/* step01 약관동의 */
+.step-01 .cont-wrap + .cont-wrap {margin-top: 50px;}
+.step-01 .cont-wrap h4 {font-size:16px; color: #333;}
+.step-01 .cont-wrap .scroll-wrap { max-height: 300px; height: 300px; overflow-y: scroll; padding: 20px; border: 1px solid #dddddd; margin: 17px 0;}
+.step-01 .cont-wrap .conts .tite { font-size: 14px;  color: #555;}
+.step-01 .cont-wrap .conts .sub-tite ,
+.step-01 .cont-wrap .conts p{ font-size: 14px;  color: #777;}
+.step-01 .cont-wrap .checkbox label { font-size: 16px; color: #555; margin-left: 4px;}
+.step-01 .cont-wrap .conts.terms  p {margin-bottom: 50px;}
+.step-01 .cont-wrap .conts p + .sub-tite { margin-top: 50px;}
+
+/* step02 실명인증 */
+.step-02 {text-align: center;}
+.step-02 .certion { display: inline-block; margin: 30px auto 260px;}
+.step-02 .certion span {font-size: 20px; font-weight: 700; display: inline-block; color: #26498c; position: relative; padding-right: 68px; padding-left: 10px; margin: 37px 0 35px;}
+.step-02 .certion span::before {content:''; position: absolute; right: 0; top:50%; transform: translateY(-50%); width: 12px; height: 19px; background: url(/page/injae/imgs/common/icon-arrow.png) no-repeat 0 0;}
+.step-02 .certion-item { position: relative; display: inline-block; width: 380px; padding: 39px 38px 40px 161px; margin: 0 10px; border-radius: 21px; text-decoration: none; background:  rgba(38, 73, 140, 0.03) url(/page/injae/imgs/common/icon-certion-phone.png) no-repeat 50px 39px; background-size: 101px 101px;}
+.step-02 .certion-item.ip { background-image: url(/page/injae/imgs/common/icon-certion-ip.png)}
+
+/* step02 기관검색 */
+.agency .step-02 .agency-search .boSrch-iptTxt {width: calc(100% - 45% - 70px);}
+.agency .step-02 .agency-search .searchBtn { position: relative; background: #333 url(/page/injae/imgs/common/icon-singnup-search.png) no-repeat 17px 11px; background-size: 18px 18px; color: #fff; line-height: 40px; height: 40px; font-size: 16px; padding-left: 30px; padding-right: 10px; width: 100px;}
+.agency .step-02 .agency-search .boSrch {width: 100%;}
+.agency .step-02 .agency-search .boSrch-label {width: 5%; line-height: 40px;}
+.agency .step-02 .agency-search .boSrch-btnBo { float: right;}
+.agency .step-02 .box-list {display: flex; width: 100%; flex-wrap: nowrap; justify-content: space-between; margin: 30px auto 40px; min-height: 250px;}
+.agency .step-02 .box-list p {margin: 5px 0;}
+.agency .step-02 .box-list .item {  background: rgba(38, 73, 140, 0.03); border-radius: 21px; text-align: center; font-size: 16px; color: #333; flex: 1; padding: 65px 20px 59px;}
+.agency .step-02 .box-list .item + .item { margin-left: 20px;}
+.agency .step-02 .box-list .skinBtnBo {background: #26498c; color: #fff; height: 40px !important; line-height: 38px !important;border-radius: 5px;  min-width: 120px; border-color: #26498c;}
+.agency .step-02 .box-list .skinBtnBo-data-bg {background: #0070e1; border-color:#0070e1;}
+.agency .step-02 .box-list .item.call{position: relative;}
+.agency .step-02 .box-list .item.call::before { content: ''; display: inline-block; width:71px; height:71px; margin: 0 auto 10px; background: url(/page/injae/imgs/common/icon-call.png) no-repeat 0 0; background-size: cover;}
+.agency .step-02 .box-list .item.call span {color: #26498c; display: block; font-weight: 700;}
+
+
+/* step03 정보입력 */
+.step-03 .skinTb {}
+#sub .step-03 .skinTb .skinBtnBo:not(.skinBtnBo-data-pos) {background: #908e8f; border-color: #908e8f; border-radius: 0; height: 35px; line-height: 35px; color: #fff; font-size: 14px; margin-left: 6px;}
+.step-03 .skinTb + .btn-wrap { margin-top: 30px;}
+.step-03 input[type=text] {font-size: 16px;}
+.step-03 .skinTb .skinTb-td {padding: 2rem 1rem;}
+.step-03 .skinTb .unit {display: inline-block; padding: 0 5px;}
+.step-03 .skinTb .error-msg {font-size: 14px; color: #666;}
+.step-03 .phoneNum .skinSelectBox {width: 25%;}
+.step-03 .emailAddr .skinIptTxt {width: 20%;}
+.step-03 .emailAddr .skinSelectBox {width: 20%;}
+.step-03 .address + .address {margin-top: 10px;}
+.step-03 .address.zipcode .skinIptTxt {width: 10%;}
+.step-03 .address.detail .skinIptTxt { width: 42%;}
+.step-03 .address.detail .skinIptTxt {margin-right: 6px;}
+
+
+/* window popup - 중복 아이디 찾기 */
+#winPopup  {text-align: center; padding: 0 30px 40px;}
+#winPopup .skinBtnBo {background: #908e8f; border-color: #908e8f; border-radius: 0; height: 35px; line-height: 35px; color: #fff; font-size: 14px; margin-left: 6px;}
+#winPopup .btn-wrap {margin-top: 20px;}
+#winPopup .btn-wrap .skinBtnBo {background: #26498c; color: #fff; height: 40px !important; line-height: 38px !important;border-radius: 5px;  min-width: 120px; border-color: #26498c;}
+#winPopup .btn-wrap .skinBtnBo::before{content: none;}
+#winPopup .btn-wrap .skinBtnBo-data-ng { background: #fff; color: #26498c;}
+#winPopup .title-box {padding: 26px 0 13px; margin-bottom: 20px; color: #26498c; font-size: 20px; border-bottom: 3px solid #26498c;}
+#winPopup .search-box {background:  rgba(38, 73, 140, 0.03); border-radius: 18px; padding: 30px 10px;}
+#winPopup .search-box label {font-size: 16px; color: #333; margin-right: 10px; vertical-align: middle; position: relative; padding-left: 23px;}
+#winPopup .search-box label img {position: absolute; left: 0; top: 3px;}
+#winPopup .skinIptTxt { height: 35px; }
+#winPopup .skinIptTxt + .skinBtnBo {margin-left: 0;}
+#winPopup .search-result-msg {font-size: 14px; color: #555; margin-top: 16px; line-height: 1.6;}
+
+/* step03 기관 정보입력 */
+.agency .step-03 .skinTb + .skinTb {margin-top: 30px;}
+.agency .step-03 .skinTb .skinSelectBox { min-width: 150px;}
+.agency .step-03 .category .skinSelectBox:first-child {width: 30%;}
+.agency .step-03 .category .skinSelectBox:nth-child(4),
+.agency .step-03 .category .skinSelectBox:last-child {width: 35%;}
+.agency .step-03 .coordinate label {display: inline-block; margin-right: 10px;}
+.agency .step-03 .coordinate input + label {margin-left: 20px;}
+.agency .step-03 .fc-red {color: #c82323; display: block;}
+.agency .step-03 .phoneNum + p {color: #c82323 !important; display: block !important; margin-left: 0 !important;}
+.agency .check-certification .error-msg {display: inline-block; line-height: 1.1; margin-left: 7px;}
+.agency .check-certification .img-wrap {width: 187px; height: 53px; border: 1px solid #000; margin-right: 7px;}
+.agency .check-certification .img-wrap img {width: 100%; height: auto;}
+.agency .check-certification > div {display: flex; align-items: center; }
+.agency .check-certification > div + div {margin-top: 10px;}
+.agency .check-certification .skinIptTxt {min-width: 200px;}
+
+/* step04 가입완료 */
+.step-04 { min-height: 800px;}
+.step-04 .sign-up-complete { border-top: 5px solid #26498c; text-align: center; border-bottom: 1px solid #ddd;}
+.step-04 .sign-up-complete::before { content: ''; display: block; width: 116px; height: 116px; margin: 70px auto 4px; border-radius: 50%; background: #f7f8fa url(/page/injae/imgs/sub/icon-singup-complete.png) no-repeat center center;}
+.step-04 .sign-up-complete strong {display: block; font-size: 24px;   color: #26498c;}
+.step-04 .sign-up-complete p { margin-top: 10px; font-size: 14px; color: #555;}
+.step-04 .sign-up-complete .btn-wrap {margin-top: 30px; margin-bottom: 70px;}
+
+/* 221206 추가 */
+/* 회원가입 개인, 기관 선택 */
+.sign-up-intro { text-align: center;}
+.sign-up-intro .title_box {margin-bottom: 0;}
+.sign-up-intro .title_box h3 {font-size: 30px;}
+.sign-up-intro p { font-size: 20px; color: #333; margin-bottom: 50px;}
+.sign-up-intro p span { color: #0070e1;}
+.sign-up-intro .cont-wrap .cont {display: inline-block; width: 445px; border: 1px solid #ccc; padding: 22px;transition: all 0.3s ease-in-out; margin: 20px 0;}
+.sign-up-intro .cont-wrap .cont + .cont {margin-left: 6px;}
+.sign-up-intro .cont-wrap .cont:focus,
+.sign-up-intro .cont-wrap .cont:hover {border-color: #26498c;}
+.sign-up-intro .cont-wrap .cont::before {content: ''; width: 140px; height: 140px; display: inline-block;  background: url(/page/injae/imgs/sub/icon-sign-up-01.png) no-repeat 0 0; margin: 5px auto;}
+.sign-up-intro .cont-wrap .cont h4 {font-weight: 700; color: #333; font-size: 20px; margin-top: 10px;}
+.sign-up-intro .cont-wrap .agency::before {background-image:url(/page/injae/imgs/sub/icon-sign-up-02.png);}
+.sign-up-intro .cont-wrap .cont a {text-decoration: none;}
+.sign-up-intro .cont-wrap .cont .contsBtn { width: 100%; margin-left: 0; max-width: 100%;}
+
+@media screen and (max-width: 600px) {
+	#sub .sign-up-intro { padding-bottom: 100px !important;}
+	.sign-up-intro p { font-size: 16px; }
+	.sign-up-intro .cont-wrap .cont {display: block; width: 100%;}
+	.sign-up-intro .cont-wrap .cont + .cont {margin-left: 0;}
+}
+/* 221206 추가 */
+
+
+@media screen and (max-width: 1120px) {
+	.sign-up-step li{ padding-right: 30px;}
+}
+
+
+/* 221129 수정 */
+@media screen and (max-width: 1180px) {
+	.sign-up-step .step-item {  font-size: 18px; padding: 110px 10px 8px 10px }
+	.sign-up-step li {position: relative; padding-right: 28px; margin: 10px 50px 10px 0;}
+	.sign-up-step li::before {right: -20px; top: 39px; transform: none;}
+	.sign-up-step .step-item { text-align: center;}
+}
+
+@media screen and (max-width: 600px) {
+	.sign-up-step { justify-content: space-between;}
+	.sign-up-step .step-item {  font-size: 16px; padding: 90px 5px 8px 10px }
+	.sign-up-step li {position: relative; padding-right: 10px; margin: 10px 0 10px 0;}
+	.sign-up-step li::before {right: -20px; top: 39px; transform: none;}
+	.sign-up-step li .step-item::before {width: 75px; height: 75px;}
+	.sign-up-step li:nth-child(1) .step-item:after{ top: 15px; left: 22px; }
+	.sign-up-step li:nth-child(2) .step-item:after{ top: 16px; left: 20px; }
+	.sign-up-step li:nth-child(3) .step-item:after{ top: 20px; left: 23px; }
+	.sign-up-step li:nth-child(4) .step-item:after{ top: 18px; left: 19px; }
+
+	.agency .step-02 .box-list { flex-direction: column;}
+	.agency .step-02 .box-list .item {padding: 50px 20px 30px}
+	.agency .step-02 .box-list .item + .item {margin-left: 0; margin-top: 30px;}
+}
+
+@media screen and (max-width: 1120px) {
+	.sign-up-step li{ padding-right: 30px;}
+}
+
+@media screen and (max-width: 900px) {
+	.sign-up-step {flex-direction: column; align-items: center;}
+	.sign-up-step li { margin: 20px 0px 50px; padding:0;}
+	.sign-up-step li::before {top: 100%; right: auto; left: 50%; margin-top: 25px; transform:translateX(-50%) rotate(90deg); }
+	.step-02 .certion span {font-size: 18px;}
+	.step-02 .certion-item + .certion-item {margin-top: 30px}
+	.step-03 .skinTb .skinTb-td {padding: 1rem;}
+	#sub .step-03 .skinTb .skinBtnBo {height: 34px; line-height: 34px; color: #fff; font-size: 14px; }
+	.step-03 .skinTb .error-msg {display: block;}
+	.step-03 .address.detail .skinIptTxt { width: 48%;}
+	.step-03 .emailAddr .skinIptTxt ,
+	.step-03 .emailAddr .skinSelectBox {width: 30%;}
+	.step-03 .address.zipcode .skinIptTxt {width: 15%;}
+
+	.agency .step-02 .agency-search .boSrch-iptTxt {width: calc(100% - 25% - 70px); line-height: 34px; height: 34px;}
+	.agency .step-02 .agency-search .searchBtn { position: relative; background: #333 url(/page/injae/imgs/common/icon-singnup-search.png) no-repeat 17px 11px; background-size: 14px 14px; color: #fff; line-height: 34px; height: 34px; font-size: 16px; padding-left: 30px; padding-right: 10px; width: 100px; margin-top: 0;}
+	.agency .step-02 .agency-search .boSrch {width: 100%;}
+	.agency .step-02 .agency-search .boSrch-label {width: 10%; line-height: 34px;}
+	.agency .step-02 .agency-search .boSrch-btnBo { float: left;}
+}
+
+
+/* 221230 마이페이지 모바일 수정 */
+@media screen and (max-width: 450px) {
+	.step-03 .emailAddr .skinIptTxt, .step-03 .emailAddr .skinSelectBox {width: 28%;}
+	.step-03 .address.zipcode .skinIptTxt {width: 35%;}
+	.step-03 .address.detail .skinIptTxt {width: 100%;}
+	.step-03 .address.detail #address01 {margin-bottom: 10px;}
+}
+/* 221128 수정 끝 */
+
+
+/* 통합검색 */
+#content.total-search {float: none !important; width: 100% !important; padding: 0 !important; margin-bottom: 60px;} /* login 스타일 단독일 시 삭제해야함*/
+.total-search .title_box {position: relative;}
+.total-search .title_box::before {content: ''; position: absolute; background: url(/page/common/images/img-line.gif); height: 1px; width: 100%; bottom: 0; left: 0;}
+.total-search .result-info {font-size: 20px; font-weight: 700; color: #333;}
+.total-search .result-info .fc-blue { color: #26498c;}
+.total-search .result-info .fc-red { color: #e93434;}
+.total-search .listLv3 {font-size: 16px; color: #333; margin-top: 30px; }
+.total-search  .boSrchArea {margin-bottom: 50px; text-align: center; background: none; border: 0;}
+.total-search .imptBox {padding: 23px 34px;}
+.total-search .imptBox .listLv { display: flex; align-items: center; justify-content: space-between; width: calc(100% - 360px);}
+.total-search .imptBox .listLv li {color: #26498c;}
+.total-search .imptBox .listLv li:before { width: 5px; height: 5px; background: #26498c;}
+#sub .total-search .imptBox .listLv li:first-child {padding-top: 0.8rem;}
+#sub .total-search .imptBox .listLv li:first-child:before { top: 18px;}
+
+/* 221218 전체 수정 및 추가 */
+.total-search .no-data {margin-bottom: 50px;}
+#sub .total-search  .boSrchArea .boSrch { float: none; max-width: 800px; margin: 0 auto;}
+#sub .total-search .boSrchArea .skinIptTxt, #sub .total-search > .boSrchArea .skinSelectBox, #sub .total-search > .boSrchArea .skinBtnBo.boSrch-btnBo { height: 66px !important; line-height: 40px; font-size: 16px; color: #333;}
+#sub .total-search .boSrchArea .skinSelectBox {min-width: 25% !important; height: 66px !important; margin-right: 0;  padding: 10px 35px 10px 20px; background-position: right 20px center;}
+#sub .total-search .boSrchArea .boSrch-iptTxt  {width: calc(100% - 25% - 80px)!important; margin-right: 0; border-right: 0; border-left: 0;  padding: 10px 20px;}
+#sub .total-search .boSrchArea .skinBtnBo.boSrch-btnBo  {width: 80px !important;  height: 66px ; background-color: #26498c !important; color: #fff; font-size: 18px;}
+#sub .total-search .imptBox .listLv a {text-decoration: none;}
+#sub .total-search .imptBox .listLv li:hover a {color:#26498c;}
+#sub .total-search .imptBox .listLv li.on a {color: #26498c; font-weight: 700;}
+
+.search-result-cont { position: relative; border-top: 5px solid #26498c; margin:50px auto;}
+.search-result-cont .btn-more {position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-size: 16px; color: #111; background: url(/page/injae/imgs/sub/icon-btn-plus.png) no-repeat right center; padding-right: 14px; }
+.search-result-cont .search-head { border-bottom: 1px solid #26498c; padding: 13px 16px 13px 34px; position: relative;}
+.search-head h4 { color: #111; font-size: 16px; font-weight: 500;}
+.search-list li { padding: 30px 34px; border-bottom: 1px solid #26498c;}
+.search-list .desc { color: #333; margin-bottom: 13px; }
+.search-list dl * {display: inline-block; color: #555;}
+.keyword-title {margin-bottom: 13px;}
+.keyword-title a { font-weight: 500;}
+.keyword-title span {color: #26498c; }
+.keyword-title p {display: inline-block; padding:0 10px;}
+
+.total-search .tab-menu a.is-active {color: #26498c; font-weight: 500;}
+.total-search .tab-panel {display: none;}
+.total-search .tab-panel.is-active {display: block;}
+
+@media screen and (max-width: 1239px) {
+	#sub .total-search .imptBox  { padding: 23px 40px;}
+	.total-search .imptBox .listLv{ width: 100%;}
+}
+
+@media screen and (max-width: 590px) {
+	#sub .total-search .imptBox  { padding: 23px 30px;}
+	.total-search .boSrchArea {margin: 30px auto}
+	#sub .total-search .boSrchArea .skinIptTxt, #sub .total-search > .boSrchArea .skinSelectBox, #sub .total-search > .boSrchArea .skinBtnBo.boSrch-btnBo { height: 50px !important; }
+	#sub .total-search .boSrchArea .skinSelectBox { min-width: 25% !important; height: 50px !important; margin-right: 0;  padding: 10px 20px; background-position: right 20px center;}
+	#sub .total-search .boSrchArea .boSrch-iptTxt { width: calc(100% - 80px)!important;  border-left: 1px solid #ccc;}
+	#sub .total-search .boSrchArea .skinBtnBo.boSrch-btnBo {height: 50px;}
+	#sub .total-search .imptBox .listLv { flex-wrap: wrap;}
+	#sub .total-search .imptBox .listLv li {width: 50%;}
+	.total-search .result-info {font-size: 18px;}
+	.search-result-cont .search-head {padding: 13px 16px 13px 20px;}
+	.search-list li { padding: 30px 20px; }
+}
+
+@media screen and (max-width: 424px) {
+	.total-search .result-info {font-size: 16px;}
+}
+/* 221218 전체 수정 및 추가 끝 */
+
+
+/* 아이디 찾기 모달 스타일 */
+.modal { position: fixed; z-index: 9999; top: -99999px; left: -99999px; display: flex; visibility: hidden; overflow-y: scroll; flex-direction: column; align-items: center; justify-content: center; padding: 20px; width: 100%; min-width: 320px; height: 100%;background: rgba(0, 0, 0, .5);opacity: 0; -webkit-transition: opacity .3s;transition: opacity .3s; transform: none;}
+.modal.is-active { top: 0;left: 0;visibility: visible; opacity: 1;}
+.modal.is-scroll { justify-content:  flex-start;}
+.modal-wrap { position: relative; width: 100%;max-width: 880px; background-color: #fff; text-align: center;}
+.modal-header { position: relative; padding: 50px 30px 50px; background: #f5f5f5;}
+.modal-header .title {font-size: 30px; color: #111; text-align: center; font-weight: 700;}
+.modal-header p {font-size: 20px; color: #333; margin-top: 20px;}
+.modal-contents { padding: 50px 50px 30px; }
+.modal-footer { padding-bottom: 50px;}
+
+/* 비밀번호 확인 모달 스타일  */ /* 221218 추가 */
+.modal.type02 .modal-wrap { max-width: 700px; background: #fff;   border-radius: 40px; border: solid 10px #26498c; overflow: hidden; height: unset;}
+.modal.type02 .modal-header {background: #fff; padding: 40px 20px 10px;}
+.modal.type02 .modal-header .title  {font-size: 20px;}
+.modal.type02 .modal-header .btn-close {position: absolute; top: 7px; right: 12px; width: 52px; height: 52px; border-radius: 50%; background: #26498c; text-indent: -9999px;}
+.modal.type02 .modal-header .btn-close::before,
+.modal.type02 .modal-header .btn-close::after { position: absolute; top: 50%; left: 50%; width: 2px; height: 27px; background-color: #fff;content: "";}
+.modal.type02 .modal-header .btn-close::before {transform: translate(-50%, -50%) rotate(45deg);}
+.modal.type02 .modal-header .btn-close::after {transform: translate(-50%, -50%) rotate(135deg);}
+.modal.type02 .modal-contents { padding: 10px 40px 10px;}
+.modal.type02 .skinIptTxt {border:1px solid #ccc; font-size: 16px; border-radius: 0; max-width: 430px; margin: 20px auto 10px; width: 100%; padding: 8px 13px 7px; height: 35px; line-height: 35px; color: #333;}
+.modal.type02 input::placeholder {font-size: 14px; color: #666666; opacity: 1; }
+
+
+/* 모달안 스타일 정의 */
+.modal .skinTb {color: #666;font-size:16px;}
+.modal .skinTb td {padding: 1rem 2rem;}
+.modal .skinTb.skinTb-row {color: #333;}
+.modal .skinTb:before {border-top: 3px solid #26498c;}
+.modal .skinTb-th,
+.modal .skinTb th {font-weight:500;color:#111;background:#eef3ff;}
+.modal .skinTb-td,
+.modal .skinTb-th,
+.modal .skinTb th,
+.modal .skinTb td {
+	border-color: #a0acc4;
+}
+.modal .skinTb .skinTb-td.skinTb-conts{border-right:1px solid #a0acc4;}
+.modal .skinIptTxt { padding: 8px 20px; border-radius: 5px; border-color: #888; height: 55px;}
+.modal .boSrchArea {border: none; background: none; padding: 0;}
+.modal .boSrchArea .boSrch { float: none; width: 100%;}
+.modal .boSrchArea .skinIptTxt, .modal .boSrchArea .skinBtnBo.boSrch-btnBo { height: 55px;}
+.modal .boSrchArea .skinIptTxt  {width: calc(100% - 90px); margin-right: 0;  padding: 10px 20px; border-radius: 5px; border-color: #888;}
+.modal .boSrchArea .skinBtnBo.boSrch-btnBo  {width: 80px !important; background-color: #26498c; font-size: 18px; margin-left: 10px; color: #fff; border-radius: 5px;}
+.modal .btn-wrap {margin-top: 20px;}
+.modal .form-wrap {text-align: left;}
+.modal .form-wrap .row { display: flex; flex-direction: row;}
+.modal .form-wrap .row + .row { margin-top: 10px;}
+.modal .form-wrap .row .field {flex: 0 0 50%;}
+.modal .form-wrap .row .field:not(.field-number) input {width: calc(100% - 76px);}
+.modal .form-wrap .field:only-child {flex: 1;}
+.modal .form-wrap .field:only-child input {width: calc(100% - 76px);}
+.modal .form-wrap .field-tit {font-size: 16px; font-weight: 400; color: #111; padding-right: 16px; text-align: right; min-width: 72px; display: inline-block;}
+.modal .form-wrap .field-tit .req { color: #ff1717; font-size: 16px;}
+.modal .form-wrap .field-number input { width: calc(100% / 3 - 40px); }
+.modal .form-wrap .field-number span {display: inline-block; padding: 0 6px;}
+.modal .btn-wrap + .search-area {margin-top: 50px;}
+.modal .skinBtnBo:not(.type05) {font-size: 16px; color: #26498c; border-color: #26498c; min-width: 69px; height: 46px; line-height: 46px; padding: 0 15px;}
+.modal .skinBtnBo:not(.type05):before{background:#26498c}
+.modal .skinBtnBo:not(.type05):hover,
+.modal .skinBtnBo:not(.type05):focus {color:#fff;}
+.modal .type05 {color: #fff; background-color: #000; min-width: 148px; height: 60px; font-size: 18px; border-radius: 5px;}
+.modal .type05:hover,
+.modal .type05:focus {background-color: #000; border-color: #0000;}
+.modal .type05::before {content: none;}
+.modal .type05.bg-primary {background: #26498c;}
+
+@media screen and (max-width: 800px) {
+	.modal-header { padding: 30px 20px;}
+	.modal-header .title  {font-size: 24px;}
+	.modal-header p {font-size: 16px;}
+	.modal .modal-contents { padding: 30px 20px 40px; }
+	.modal .form-wrap .row { flex-direction: column;}
+	.modal .form-wrap .row .field + .field { margin-top: 10px;}
+}
+
+@media screen and (max-width: 639px) {
+	.modal .modal-contents { padding: 30px 15px 30px; }
+	.modal .boSrchArea .skinIptTxt  {  padding: 8px 20px;}
+	.modal-header p {font-size: 14px; margin-top: 8px}
+	.modal .skinIptTxt,
+	.modal .boSrchArea .skinIptTxt, .modal .boSrchArea .skinBtnBo.boSrch-btnBo { height: 40px;}
+	.modal .boSrchArea .skinBtnBo.boSrch-btnBo  {font-size: 16px; line-height: 40px;}
+	.modal .type05 { height: 50px; font-size: 16px;}
+	.modal .skinBtnBo:not(.type05) { line-height: 40px; height: 40px; font-size: 16px;}
+	.modal-footer { padding-bottom: 30px;}
+	.modal .btn-wrap + .search-area {margin-top: 30px}
+}
+
+
+/* 문해교육센터 */
+.education-center .line { background: #e5e5e5; height: 1px; width: 100%; border: 0; margin: 50px 0; }
+.education-center .organization-chart .depth02.bg-green { background: #37a27a; color: #fff; line-height: 1.45; font-size: 20px; border-color: #37a27a;}
+.education-center .organization-chart .depth02 em {font-size: 16px; display: block;}
+.education-center .unit {color: #111; font-size: 16px; font-weight: 500;}
+.education-center .skinFont-bold { font-weight: 500; color: #111;}
+
+/* 221218 추가 */
+/* 평생교육 - 온라인교육 */
+.online-edu .cont-box { width: 100%; display: flex; flex-wrap: wrap; text-align: center; margin-top:20px;}
+.online-edu .box { position: relative; width: 24%;min-height: 239px; border: 1px solid #aaaaaa; margin-bottom: 20px; margin-right: 1.3%; border-radius: 5px;}
+.online-edu .box:nth-child(4n){margin-right: 0;}
+.online-edu .box figure { height: 100%;}
+.online-edu .box .name {font-size: 16px; color: #333;}
+
+.online-edu .cont-box a {text-decoration: none;}
+.online-edu .cont-box .box .img {min-height: 160px; display: flex; align-items: center; justify-content: center;}
+.online-edu .cont-box .box img {max-width: 100%; height: auto;width: unset;}
+.online-edu .cont-box .box figcaption {border-top: 1px solid #aaa; min-height: 78px; display: flex; align-items: center; justify-content: center;}
+.online-edu .cont-box .box .name {}
+.online-edu .cont-box .box ul { border-top: 1px solid #a0acc4; text-align: center; padding-top: 20px; margin-top:20px;}
+
+@media screen and (max-width: 768px) {
+	.online-edu .box { width: 48%; margin-right: 4%; }
+	.online-edu .box:nth-child(2n) {margin-right: 0;}
+	.online-edu .box:nth-child(4n){margin-right: auto;}
+}
+
+/* 강사정보 */
+.teacher-info .boSrchArea .boSrch {float: none !important; width: 100%;}
+.teacher-info .boSrchArea dl { display: flex; align-items: center; width: 100%;}
+#sub .teacher-info .boSrchArea .skinSelectBox { width: 32%; margin: 15px 0}
+#sub .teacher-info .boSrchArea .skinSelectBox + .skinSelectBox { margin-left: 1%;}
+#sub .teacher-info .boSrchArea .skinIptTxt {width: 55%; margin: 15px 10px;}
+#sub .teacher-info .boSrchArea .boSrch-btnBo {margin: 15px 0;}
+.teacher-info .boSrchArea dt { font-size: 18px; color: #333; font-weight: 700; min-width: 100px;  text-align: right;}
+.teacher-info .boSrchArea dd { flex: 2; margin-left: 50px;}
+.teacher-info .boSrchArea .boSrch-iptTxt {  width: calc(100% - 84px); }
+
+@media screen and (max-width: 1000px) {
+	#sub .teacher-info .boSrchArea .skinIptTxt {width: 50%;}
+}
+
+
+
+@media screen and (max-width: 689px) {
+	#sub .teacher-info .boSrchArea {padding: 3.7rem 3.9rem}
+	.teacher-info .boSrchArea dl { flex-direction: column; align-items: flex-start;}
+	.teacher-info .boSrchArea dl + dl { margin-top: 25px;}
+	.teacher-info .boSrchArea dt {font-size: 16px; text-align: left; margin-bottom: 20px;}
+	#sub .search-map >.boSrchArea {padding: 50px 39px 30px;}
+	#sub .search-map dl dt {font-size: 16px;}
+	#sub .search-map dl dd a.all {position: absolute; bottom: 100%; right: 0; width: 30%; }
+	#sub .search-map dl dd a { margin-bottom: 20px;}
+	#sub .search-map p {font-size: 13px;}
+	#sub .teacher-info .boSrchArea .skinSelectBox + .skinSelectBox { margin-left: 0;}
+	.teacher-info .boSrchArea dd {width: 100%; margin-left: 0;}
+	#sub .teacher-info .boSrchArea .skinSelectBox {width: 100%; margin: 5px 0;}
+	.teacher-info .boSrchArea .boSrch-iptTxt {width: calc(100% - 68px);}
+	#sub .teacher-info .skinIptTxt,
+	#sub .teacher-info .skinSelectBox { font-size: 14px; line-height: 40px; height: 40px;}
+	#sub .teacher-info .skinBtnBo.boSrch-btnBo { line-height: 40px; height: 40px;}
+	#sub .teacher-info .boSrchArea .skinIptTxt {margin-left: 0;}
+}
+
+.teacher .titLv3 {margin-bottom: 15px;}
+
+/* 동아리 현황 상세 표 */
+#sub .skinTb .type01 th {border: 1px solid #eef3ff;}
+#sub .skinTb .type01 td {border: 1px solid #eef3ff; text-align: center;}

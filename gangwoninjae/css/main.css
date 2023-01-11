@@ -1,10 +1,10 @@
-@charset "utf-8";
+/* @charset "utf-8";
 
-#header{background:rgba(255,255,255,.9)}
+#header{background:rgba(255,255,255,.9)} */
 /*
 #header.fixed{background:#fff;}
 */
-#main{overflow:hidden;font-family:"NanumSquareRound";}
+/* #main{overflow:hidden;font-family:"NanumSquareRound";}
 
 #visual{position:relative;}
 #visual .slick{position:relative;z-index:3;}
@@ -570,4 +570,331 @@
     #story .control a:after{font-size:16px;}
     #story .control p{height:36px;line-height:36px;margin-left:10px;font-size:12px;}
     #story .control p em{font-size:18px;}
+} */
+
+@charset "utf-8";
+
+#main{overflow-x: hidden; overflow-y: auto; font-family:'Noto Sans KR', sans-serif; padding-top: 120px;}
+
+@media (max-width: 1199px) {
+	#main {padding-top: 86px;}
 }
+
+
+/* common style */
+/* 1260px */
+/* .section {border: 1px solid red;}
+.section .inner {border: 1px solid blue;} */
+.section { padding: 60px 0;}
+.section .inner {max-width: 1400px; margin: 0 auto;}
+.section .title { font-size: 55px; font-weight: 700; line-height: 1.49; color: #111;}
+.section .btn-more { position: relative; display: inline-block; font-size: 18px; border-bottom: 1px solid #111; color: #111; padding: 9px; text-align: left; min-width: 170px; background: url(/page/injae/imgs/main/icon-more-arrow.png) no-repeat right 10px center;}
+.section .btn-more.bg-white {background-image: url(/page/injae/imgs/main/icon-more-arrow-w.png)}
+
+@media (max-width:1399px) {
+	.section .inner {padding: 0 20px}
+}
+
+@media (max-width:760px) {
+	.section {padding: 50px 0;}
+	.section .inner {padding: 0 20px;}
+	.section .title {font-size: 44px;}
+	.section .btn-more {min-width: 146px; font-size: 16px;}
+}
+
+/* tab common */
+.tab {}
+.tab-menu {}
+.tab-menu a {position: relative; display: inline-block;}
+.tab-panel {display: none; position: relative;}
+.tab-panel.is-active {display: block;}
+
+/* main visual */
+.visual-area { height: 620px; width: 100%; background: url(/page/injae/imgs/main/bg_visual_01.png)  no-repeat center center; background-size: cover; animation:fade01 .4s ease-in-out;}
+.visual-area .slick {float: left}
+.visual-area .tab {float: right; width: 50%; padding-left: 40px;}
+.visual-area .tab-menu {width: 100%; display: flex;}
+.visual-area .tab-menu a {height: 68px; padding: 18px 10px; text-align: center; color: #26498c; background: #bed3e9; font-size: 22px; border-top-left-radius: 10px; border-top-right-radius: 10px; flex: 1;}
+.visual-area .tab-menu a + a {margin-left: 2px;}
+.visual-area .tab-menu a.is-active {background-color: #26498c; color: #fff;}
+.visual-area .tab-menu a.more { font-size: 0; flex: 0 0 70px; }
+.visual-area .tab-menu a.more::before {content: ''; display: inline-block; width: 27px; height: 27px; background: url(/page/injae/imgs/main/sp_injae.png) no-repeat -417px -153px; margin-top: 2px;}
+.visual-area .tab-panel {border-bottom-left-radius: 10px;border-bottom-right-radius: 10px; overflow: hidden; background: #fff;}
+.visual-area .board-list li + li {border-top: 1px solid #cccc;}
+.visual-area .board-list a {display: flex; justify-content: space-between; padding: 20px; background: #fff;}
+.visual-area .board-list p { font-size: 20px; color: #333; font-weight: 500; max-width: 60%; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+.visual-area .board-list span {color: #666; font-size: 20px;}
+.visual-area .btn-go { display: inline-block; width: 200px; height: 55px; line-height: 55px; background: #e09a1d; color: #fff; font-size: 20px; position: relative; padding: 0 40px; }
+.visual-area .btn-go::after {content: ''; display: block; position: absolute; top: 50%; transform: translateY(-50%); right: 40px; margin-top: -4px; width: 8px; height: 8px;border: 1px solid #fff; border-width: 1px 1px 0 0;transform: rotate(49deg);}
+
+.visual-area.active {background: url(/page/injae/imgs/main/bg_visual_01.png) no-repeat center center; background-size: cover;}
+
+@keyframes fade01{
+    0%{opacity:0.5;}
+    100%{opacity:1;}
+}
+
+#visual {position:relative;}
+#visual .slick {position:relative;z-index:3; width:680px;}
+#visual .slick .slide {position:relative;width:680px;height:385px; box-shadow: 3px 3px 20px 0 rgba(38, 73, 140, 0.15);}
+#visual .slick .slide img{position:absolute;top: 0; left:0; width:680px;height:385px;display:block; z-index: -1;}
+
+#visual .text {padding: 50px;}
+#visual .text h3{ color: #111;line-height:1.5;font-weight:700;font-size:36px;position:relative;word-break:keep-all; margin-bottom: 15px;}
+#visual .text p{ color: #111;line-height:1.5;font-weight:400; font-size:18px;word-break:keep-all; }
+#visual .btn-go {position: absolute; bottom: 66px; left: 52px;}
+
+.slick-dots {padding: 7px 0; margin-top: 25px; text-align: center;}
+.slick-dots li {display: inline-block; font-size: 0; margin:0 10px;}
+.slick-dots li button { width: 16px; height: 16px; border-radius: 50%; background: #bed3e9; cursor: pointer;}
+.slick-dots li.slick-active button {background: #26498c;}
+.control button {position:absolute; bottom: 2px; left: 50%; transform: translateX(-50%); margin-left: 80px; z-index:5; font-size: 0; text-indent: -9999px;}
+.control button.pause {background: url(/page/injae/imgs/main/icon-pause.png) no-repeat 0 0; display: block; width: 30px; height: 30px;}
+.control button.play {background: url(/page/injae/imgs/main/icon-play.png) no-repeat 0 0; display: block; width: 30px; height: 30px;}
+
+
+@media (max-width:1399px) {
+	.visual-area {height: auto;}
+	.visual-area .slick {float: none; margin:  0 auto;  margin-bottom: 50px;}
+	.visual-area .tab {float: none; width: 100%; padding-left: 0;}
+	.visual-area .tab-menu a {height: 60px; padding: 17px 10px;font-size: 18px;}
+	.visual-area .board-list p { font-size: 16px;}
+	.visual-area .board-list span {font-size: 16px;}
+}
+
+@media (max-width:760px) {
+	.visual-area {background-position: center top;}
+	#visual .slick {width: 600px; margin-bottom: 50px;}
+    #visual .slick .slide{height:340px;width: 600px;}
+	#visual .slick .slide img{width:100%;height:340px;display:block;}
+	.slick-dots { margin-top: 10px;}
+}
+
+@media (max-width:600px) {
+	#visual .slick {width: 380px;}
+    #visual .slick .slide{height:250px;width: 380px;}
+	#visual .slick .slide img{width:100%;height:250px;display:block;}
+	#visual .text {padding: 30px;}
+	#visual .text h3 {font-size: 33px;}
+	#visual .text p {font-size: 15px;}
+	#visual .btn-go {position: absolute; bottom: 30px; left: 30px; width: 184px;}
+}
+
+
+@media (max-width:428px) {
+	#visual .slick {width: 380px;}
+    #visual .slick .slide{height:225px;width: 380px;}
+	#visual .slick .slide img{width:100%;height:225px;display:block;}
+	#visual .text {padding: 24px;}
+	#visual .text h3 {font-size: 24px;}
+	#visual .text p {font-size: 14px;}
+	#visual .btn-go {position: absolute; bottom: 24px; left: 24px; width: 160px; font-size: 15px;height: 45px;line-height: 45px;}
+	#visual .slick-dots {margin-left: -20px;}
+}
+
+
+/* 인평원 메뉴 */
+.section .link-list { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; margin: 20px 70px;}
+.section .link-list a { position: relative; display: block; width: 100%; height: 100%; text-align: center; cursor: pointer;}
+.section .link-list a strong { display: inline-block;  margin-top: 10px; font-size: 20px; font-weight: 400; color: #111;}
+.section .link-list a::before { content: ''; position: relative;display: block; width: 110px; height: 110px; border-radius: 50%;  background: #eeeeee;}
+.section .link-list a::after { content: ''; position: absolute; top: 34px; left: 50%; transform: translateX(-50%); background-image: url(/page/injae/imgs/main/sp_injae.png); background-repeat: no-repeat; background-position-y: -337px; height: 50px;}
+.section .link-list li:nth-child(1) a::after { background-position-x: -10px; width: 59px;}
+.section .link-list li:nth-child(2) a::after { background-position-x: -99px; width: 44px;}
+.section .link-list li:nth-child(3) a::after { background-position-x: -173px; width: 54px; height: 55px;}
+.section .link-list li:nth-child(4) a::after { background-position-x: -257px; width: 42px; height: 40px;}
+.section .link-list li:nth-child(5) a::after { background-position-x: -329px; width: 48px;}
+.section .link-list li:nth-child(6) a::after { background-position-x: -407px; background-position-y: -335px; width: 51px;}
+
+
+@media (max-width:1024px) {
+	.section .link-list {margin: 0;}
+}
+
+@media (max-width:900px) {
+	.section .link-list {justify-content: center;}
+	.section .link-list li {  margin: 0 50px; margin-bottom: 20px;}
+}
+
+@media (max-width:768px) {
+	.section .link-list li {  margin: 0 40px; margin-bottom: 30px;}
+}
+
+@media (max-width:533px) {
+	.section .link-list {justify-content: space-between;}
+	.section .link-list li { margin: 20px 5px;}
+}
+
+@media (max-width:424px) {
+	.section .link-list {justify-content: space-between; margin: 0 40px;}
+	.section .link-list li {margin: 20px 0;}
+}
+
+/* 포토뉴스 */
+.photo-news { background: #f7f9fe; height: 100%; padding: 90px 0;}
+.photo-news .box:first-child {position: relative;float: left; width: 20%;}
+.photo-news .box:last-child { position: relative;float: right; width: 80%;}
+.photo-news .tab-menu {margin-top: 15px;}
+.photo-news .tab-menu .tab-menu-top {margin-bottom: 5px;}
+.photo-news .tab-menu a {color: #666; display: inline-block; position: relative;}
+.photo-news .tab-menu a + a { margin-left: 10px; padding-left: 10px;}
+.photo-news .tab-menu a +  a::before {content: ''; position: absolute; top: 50%; left: 0; transform: translateY(-50%); display: block; width: 1px; height: 15px; background: #cccccc;}
+.photo-news .tab-menu a.is-active {color: #26498c; font-weight: 700;}
+.photo-news .btn-wrap {text-align: left; margin-top: 88px;}
+.photo-news .card-list {width: 100%;}
+.photo-news .card-list li {float:left; width: 32%; margin-right: 2%;}
+.photo-news .card-list li:last-child  {margin-right: 0;}
+.photo-news .card-list figure>a { position: relative; display: block; overflow: hidden;  border: 1px solid #ccc;}
+.photo-news .card-list figure img {width: 100%;}
+.photo-news .card-list figcaption {padding-top: 20px;}
+.photo-news .card-list figcaption h4 { margin-bottom: 10px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-weight: 700;}
+.photo-news .card-list figcaption .cont-info {font-size: 18px; color: #888; }
+.photo-news .card-list figcaption .view {position: relative; display: inline-block; margin-left: 15px; padding-left: 15px;}
+.photo-news .card-list figcaption .view::before {content: ''; position: absolute; top: 50%; left: 0; transform: translateY(-50%); display: block; width: 1px; height: 17px; background: #aaa;}
+
+
+@media (max-width:991px) {
+	.photo-news .box:first-child {float: none; width: 100%;}
+	.photo-news .box:last-child {float: none; width: 100%;}
+	.photo-news .btn-wrap {position: absolute; top: 0; right: 0;}
+	.photo-news .tab-panel { margin-top: 50px;}
+	.photo-news .card-list figcaption h4 { font-size: 16px;}
+	.photo-news .card-list figcaption .cont-info {font-size: 16px; }
+}
+
+@media (max-width:570px) {
+	.photo-news .tab-menu a + a { margin-left: 20px; padding-left: 20px;}
+	.photo-news .card-list figcaption h4 { font-size: 14px;}
+	.photo-news .card-list figcaption .view { margin-left: 8px; padding-left: 8px;}
+	.photo-news .card-list figcaption .cont-info {font-size: 14px; }
+	.photo-news .card-list li {width: 49%;}
+	.photo-news .card-list li:nth-child(2n) {margin-right: 0;}
+	.photo-news .card-list li:nth-child(3) { display: none;}
+}
+
+
+/* 알려드립니다 */
+.cont-notice {background: #26498c url(/page/injae/imgs/main/bg-notice.png) no-repeat right 85px; text-align: center;}
+.cont-notice .title {color: #fff;}
+.cont-notice .title + p {color: rgba(225, 225, 225, 0.7); font-size: 18px; margin-top: 5px;}
+.cont-notice .tab-menu { margin-top: 20px;}
+.cont-notice .tab-menu a { position: relative; font-size: 22px; color: rgba(225, 225, 225, 0.7); font-weight: 700; }
+.cont-notice .tab-menu a + a { margin-left: 20px;}
+.cont-notice .tab-menu a +  a::after {content: ''; position: absolute; top: 50%; left: -10px; transform: translateY(-50%); display: block; width: 1px; height: calc(100% - 40%); background: #f7f7f7; opacity: 0.3;}
+.cont-notice .tab-menu a.is-active {color: #3edeff; border-bottom: 3px solid #3edeff; margin-bottom: 7px;}
+.cont-notice .tab-menu a.is-active::before {content: ''; position: absolute; display: block; top: 100%; left: 50%; transform: translateX(-50%); width: 9px; height: 7px; background: url(/page/injae/imgs/main/icon-notice-arrow.png);}
+.cont-notice .btn-more {color: #fff; border-color: #fff;}
+
+.cont-notice .card-list .card-item {  display: inline-flex; flex-direction: column; width: 430px !important; height: 260px !important; border-radius: 10px;box-shadow: 20px 20px 50px 0 rgba(0, 0, 0, 0.04);border: solid 1px #ededed; background-color: #fff; text-align: left;}
+.cont-notice .card-list .card-item + .card-item { margin-left: 50px;}
+.cont-notice .card-list .card-header {background: #f7f7f7; border-top-left-radius: 10px; border-top-right-radius: 10px; padding: 20px 30px;}
+.cont-notice .card-list .location {display: inline-block; padding-left: 23px; font-size: 20px; font-weight:700; color: #26498c; background: url(/page/injae/imgs/main/icon-pin.png) no-repeat left top; line-height: 1;}
+.cont-notice .card-list .badge {position: absolute; width: 98px; height: 98px; top: 0; right: 27px; margin-top: -45px; border-radius: 50%; background: #f7f7f7;}
+.cont-notice .card-list .badge span { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #26498c; font-size: 18px; font-weight:400;}
+.cont-notice .card-list .badge::before {content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: calc(100% - 18px); height: calc(100% - 18px); border-radius: 50%; background: #fff;  box-shadow: 20px 20px 50px 0 rgba(0, 0, 0, 0.16); }
+.cont-notice .card-list .card-body {position: relative; display: block; flex: 1; padding: 30px 30px 90px; }
+.cont-notice .card-list .text-box strong { display: block; font-size: 22px; color: #111; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+.cont-notice .card-list .text-box p {font-size: 18px; color: #333;}
+.cont-notice .date {position: absolute; bottom: 19px; right: 20px; font-size: 48px; color: #eee; font-weight: 700;}
+
+
+/* 강좌소식 */
+#info-list {position:relative;}
+#info-list .slick {position:relative;z-index:3; margin: 0 -25px; padding-top: 30px;}
+#info-list .slick .slide{position:relative; margin: 0 25px;}
+#info-list .slick-dots { position: absolute; top: 0; right: 0; margin-top: -30px; margin-right: 60px; padding: 0;}
+#info-list .slick-dots li button { width: 8px; height: 8px; background:#888;}
+#info-list .slick-dots li.slick-active button {background: #fff;}
+#info-list .control button {position:absolute; bottom: auto; top: -20px; left: auto; right: 0; margin-left: 80px; z-index:5; font-size: 0; text-indent: -9999px;}
+#info-list .control button.pause {background: url(/page/injae/imgs/main/icon-pause-w.png) no-repeat 0 0; display: block; width: 18px; height: 18px;}
+#info-list .control button.play {background: url(/page/injae/imgs/main/icon-play-w.png); display: block; width: 18px; height: 18px;}
+
+/*  인평원소식 */ /* 221214 추가 */
+#notice-list {position:relative;}
+#notice-list .slick {position:relative;z-index:3; margin: 0 -25px; padding-top: 30px;}
+#notice-list .slick .slide{position:relative; margin: 0 25px;}
+#notice-list .slick-dots { position: absolute; top: 0; right: 0; margin-top: -30px; margin-right: 60px; padding: 0;}
+#notice-list .slick-dots li button { width: 8px; height: 8px; background:#888;}
+#notice-list .slick-dots li.slick-active button {background: #fff;}
+#notice-list .control button {position:absolute; bottom: auto; top: -20px; left: auto; right: 0; margin-left: 80px; z-index:5; font-size: 0; text-indent: -9999px;}
+#notice-list .control button.pause {background: url(/page/injae/imgs/main/icon-pause-w.png) no-repeat 0 0; display: block; width: 18px; height: 18px;}
+#notice-list .control button.play {background: url(/page/injae/imgs/main/icon-play-w.png); display: block; width: 18px; height: 18px;}
+
+
+@media (max-width: 1024px) {
+	#info-list .slick-dots { margin-right: 60px;}
+    #notice-list .slick-dots { margin-right: 60px;} /* 221214 추가 */
+}
+
+@media (max-width:760px) {
+	.cont-notice  .title { text-align: left;}
+	.cont-notice  .title + p { text-align: left; font-size: 16px; max-width: 60%;}
+	.cont-notice .tab-menu {text-align: left;}
+	#info-list .slick { padding-top: 80px;}
+	#info-list .slick .slide{position:relative; margin: 0 15px;}
+	#info-list .slick-dots {right: auto; left: 40px; margin-top: 10px;}
+	#info-list .control button  {left: 60px; top: 18px;}
+	.cont-notice .btn-wrap {position: absolute; top: 0; margin-top: 0; right: 0;  z-index: 10;}
+        /* 221214 추가 */
+	#notice-list .slick { padding-top: 80px;}
+	#notice-list .slick .slide{position:relative; margin: 0 15px;}
+	#notice-list .slick-dots {right: auto; left: 40px; margin-top: 10px;}
+	#notice-list .control button  {left: 60px; top: 18px;}
+}
+
+@media (max-width:428px) {
+	.cont-notice .btn-wrap {position: absolute; top: 0; margin-top: 0; right: 0;  z-index: 10;}
+	#info-list .slick { padding-top: 80px;}
+	#info-list .slick .slide{position:relative; margin: 0 15px;}
+	#info-list .slick-dots {right: auto; left: 20px; margin-top: 10px;}
+	#info-list .control button  {left: 50px; top: 18px;}
+
+    #notice-list .slick { padding-top: 80px;}
+	#notice-list .slick .slide{position:relative; margin: 0 15px;}
+	#notice-list .slick-dots {right: auto; left: 20px; margin-top: 10px;}
+	#notice-list .control button  {left: 50px; top: 18px;}
+
+	.cont-notice .card-list .card-item  {width: 320px !important; height: 230px !important;}/* 221214 추가 */
+
+	.cont-notice .card-list .card-header  {padding: 20px 23px;}
+	.cont-notice .card-list .card-item + .card-item { margin-left: 30px;}
+	.cont-notice .card-list .location {font-size: 17px;}
+	.cont-notice .card-list .badge  {width: 85px; height: 85px;}
+	.cont-notice .card-list .badge span {font-size: 16px;}
+	.cont-notice .card-list .card-item {width: 324px; height: 196px;}
+	.cont-notice .card-list .card-body {position: relative; display: block; flex: 1; padding: 30px 28px 50px; }
+	.cont-notice .card-list .text-box strong { font-size: 18px;}
+	.cont-notice .card-list .text-box p {font-size: 15px;}
+	.cont-notice .date {font-size: 34px; bottom: 5px;}
+}
+
+/* 퀵메뉴 */
+.quick-menu {position: fixed; z-index: 50; right: 50px; top:410px;}
+.quick-menu a { display: block; width: 60px; height: 60px; font-size: 0; text-indent: -9999px; border-radius: 50%; background-repeat: no-repeat; background-image: url(/page/injae/imgs/main/sp_injae.png); background-position-y: -230px; margin-bottom: 10px;}
+.quick-menu a:nth-of-type(1) {background-position-x: -250px;}
+.quick-menu a:nth-of-type(2) {background-position-x: -170px;}
+.quick-menu a:nth-of-type(3) {background-position-x: -90px;}
+.quick-menu a:nth-of-type(4) {background-position-x: -10px;}
+
+
+@media (max-width:1699px) {
+	.quick-menu {right: 30px; top: 320px;}
+}
+
+@media (max-width:760px) {
+	.quick-menu {right: 20px; top: 320px;}
+}
+
+/* main top 버튼 */
+.quick-menu .btn-top{display:block;transition:opacity .1s;opacity:0;background:url(/page/common/images/ico-top-btn.png) 50% 50% no-repeat;background-size:cover; opacity: 1;}
+.quick-menu .btn-top:hover{transform:scale(1.03);}
+.quick-menu .btn-top:active{transform:scale(.97);}
+
+@media (max-width:1699px) {
+	.quick-menu .btn-top{right:30px;bottom:20px !important;top:auto !important;width:60px;height:60px;}
+}
+
+@media (max-width:760px) {
+	.quick-menu .btn-top{right:20px;bottom:15px !important;}
+}
+
