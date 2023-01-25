@@ -432,7 +432,7 @@ p.listLv4:before, div.listLv4:before, span.listLv4:before, .listLv4 >li:before, 
 #sub .skinIptRadio { width: 0; height: 0; position: absolute; left: -9999px;}
 #sub .skinIptRadio + label {position:relative; display:inline-block; font-size:15px; color: #333;line-height: 20px;padding-left:23px;}
 #sub .skinIptRadio + label::before {content:'';position:absolute;left: 0;top:0;width:18px;height:18px;border:1px solid #707070; border-radius:50%;}
-#sub .skinIptRadio:checked + label::after {content: ''; position: absolute; top: 4px; left:4px; width: 10px; height:10px; background:#333;border-radius:50%;}
+#sub .skinIptRadio:checked + label::after {content: ''; position: absolute; top: 5px; left:5px; width: 10px; height:10px; background:#333;border-radius:50%;}
 
 #sub .ctrlFile {margin-bottom: 10px;}
 #sub .skinBtnBo.ctrlFile-btnFile {height:35px;line-height:35px;color:#fff;font-size:16px;background:#333;border:1px solid #333;}

@@ -13,7 +13,7 @@ $(function() {
      $('#visual .slick').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
         $('#visual .text').removeClass('active').fadeOut('300');
      });
- 
+
      $('#visual .slick').on('afterChange', function(event, slick, currentSlide, nextSlide) {
         $('#visual .text').addClass('active').fadeIn('300');
      });
@@ -148,7 +148,96 @@ $(function() {
         }]
     });
 
+    // 221214 추가
+    $('#notice-list .slick').slick({
+        autoplay: true,
+        arrows: false,
+        dots: true,
+        draggable: true,
+        infinite: true,
+        slidesToShow: 3,
+        accessibility: false,
+        slidesToScroll: 1,
+        pauseOnHover: false,
+        focusOnSelect: true,
+        speed: 800,
+        swipeToSlide: true,
+        autoplaySpeed: 12000,
+        responsive: [
+            {
+                breakpoint: 428,
+                settings: {
+                    speed: 800,
+                    slidesToShow: 1,
+                    variableWidth: true,
+                    centerMode:true,
+                    centerPadding:'30px',
+                }
+            },
+            {
+            breakpoint: 768,
+            settings: {
+                speed: 800,
+                slidesToShow: 1,
+                variableWidth: true,
+                centerMode:true,
+                centerPadding:'30px',
+            }
+        },
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 1,
+                variableWidth: true,
+                centerMode:true,
+                centerPadding:'30px',
+            }
+        }]
+    });
+
+
+    // 221214 추가
+	$('#notice-list .playToggle').click( function() {
+		if ($(this).html() == '정지' && $(this).hasClass('pause')){
+				$(this).removeClass('pause');
+				$('.slick-visual').slick('slickPause');
+				$(this).html('재생');
+				$(this).addClass('play');
+			} else {
+				$(this).removeClass('play');
+				$('.slick-visual').slick('slickPlay');
+				$(this).html('정지');
+				$(this).addClass('pause');
+			}
+	});
+
+    // tab common
+	$('.tab').each(function(){
+		$(this).find('.tab-menu a').on('click', function (e) {
+			var tabId = $(this).attr('data-id');
+			// 221218 추가
+			var selector = $('#' + tabId).find('.slick').parent().attr('id');
+
+			e.preventDefault();
+			$(this).closest('.tab').find('.tab-menu a').removeClass('is-active');
+			$(this).closest('.tab').find('.tab-panel').removeClass('is-active');
+
+			$(this).addClass('is-active');
+			$('#' + tabId).addClass('is-active');
+
+			// 221218 추가
+			setSlickIntoTab(selector);
+		});
+	});
+
 });
+
+// 221218 추가
+function setSlickIntoTab(selector) {
+	if($('.slick').hasClass('slick-initialized')){
+		$('#'+ selector).find('.slick').get(0).slick.setPosition();
+	}
+}
 
 
 $(window).on('load resize', function () {

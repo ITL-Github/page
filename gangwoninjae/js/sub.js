@@ -1,5 +1,23 @@
 $(function() {
-    $('#content .share .open').on('click', function (e) {
+
+	// 기관정보보기 전체보기 버튼클릭 이벤트
+	$("#orgAllSearchBtn").on('click', function() {
+		$("#search-keyword").val('');
+		$("#selectRegionCode").val('');
+		$("#orgSortL").val('').prop("selected", true);
+		$("#orgSortM").val('').prop("selected", true);
+		$("#orgSortS").val('').prop("selected", true);
+		$("#orgSearchBtn").trigger('click');
+	})
+
+	// 기관검색 행정구역 지도
+	/*$(".selectRegionCode").on('click', function() {
+		$(".selectRegionCode").removeClass("on");
+		$(this).addClass("on");
+		$("#selectRegionCode").val(this.dataset.code);
+	})*/
+
+	$('#content .share .open').on('click', function (e) {
 		 e.preventDefault();
 		$(this).next().fadeToggle(100);
 	});
@@ -169,22 +187,137 @@ $(function() {
 
 	// Lnb Menu
 	lnbToggleMenu();
+	// tab
+	tab();
+    totalSearchTab();
 });
 
 function lnbToggleMenu () {
-	var lnb_head = $('.depth_01>li>a'),
-	lnb_body = $('.depth_01 li>.depth_02');
+	var $lnb_head = $('.depth_01>li>a'),
+	    $lnb_body = $('.depth_01 li>.depth_02');
 
-	lnb_head.on('click', function(e) {
+		$lnb_head.each(function(){
+			if($(this).siblings(".depth_02").length === 0) {
+				$(this).addClass("single");
+			}
+		});
+
+
+
+	$lnb_head.on('click', function(e) {
 		e.preventDefault();
+
 		if (!($(this).hasClass('on'))){
-			lnb_body.slideUp('normal');
+			$lnb_body.slideUp('normal');
 			$(this).next().stop(true,true).slideToggle('normal');
-			lnb_head.removeClass('on');
+			$lnb_head.removeClass('on');
 			$(this).addClass('on');
+            if (($(this).hasClass('single'))){
+                var url = $(this)[0].href;
+                location.href = url;
+            }
 		} else {
-			lnb_head.removeClass('on');
-			lnb_body.slideUp(300);
+			$lnb_head.removeClass('on');
+			$lnb_body.slideUp(300);
 		}
 	});
 }
+
+function tab() {
+    $(document).on("click", ".pageTab-tab", function (){
+      var num = $(".pageTab li a").index($(this));
+
+      if($(".pageTab-panel").length === 0) {return false}
+
+      $(".pageTab li").removeClass("active");
+      $(".pageTab-panel").removeClass("active");
+
+      $(".pageTab li:eq("+ num +")").addClass("active");
+      $(".pageTab-panel:eq("+ num +")").addClass("active");
+    });
+  }
+
+$(document).on('click', '#lnb .depth_02 li a', function(e){
+    e.preventDefault();
+    $(this).addClass('on');
+    $('#lnb .depth_02 li a').not($(this)).removeClass('on');
+});
+
+$(document).on('click', '#lnb .depth_02 li a', function(e){
+    e.preventDefault();
+    var url = $(this)[0].href;
+    location.href = url;
+});
+
+// 221218 추가
+function totalSearchTab () {
+	$('.tab').each(function(){
+		$(this).find('.tab-menu a').on('click', function (e) {
+			e.preventDefault();
+
+			var tabId = $(this).attr('data-id');
+
+			$(this).closest('.tab').find('.tab-menu a').removeClass('is-active');
+			$(this).closest('.tab').find('.tab-panel').removeClass('is-active');
+
+			if(tabId === 'tab-total') {
+				$(this).addClass('is-active');
+				$('.tab-panel').addClass('is-active');
+			} else {
+				$(this).addClass('is-active');
+				$('#' + tabId).addClass('is-active');
+			}
+		});
+	});
+}
+
+
+	var userMode = '';
+	$(document).ready(function () {
+		$(".btn-password-form").click(function () {
+			$(".modal").addClass('is-active');
+
+			userMode = "read";
+			$("form[name='confirmForm'] input[name='boardCode']").val($(this).data("board-code"));
+			$("form[name='confirmForm'] input[name='articleSeq']").val($(this).data("seq"));
+		});
+	});
+
+	// 221218 비밀번호 찾기 모달
+	$(function(){
+		$('.icoSecret').on('click',  function(){
+			$(".modal").addClass('is-active');
+		});
+	});
+
+	$(function(){
+		$('.btn-close').on('click',  function(){
+			$(".modal").removeClass('is-active');
+			$('.modal-overlay').hide();
+		});
+	});
+
+	function openModal(modalname){
+		$("#" + modalname).addClass('is-active');
+		modalScrolling(modalname);
+	}
+
+	function modalScrolling(selector) {
+		var target = $("#" + selector);
+		var modalH = target.children().outerHeight();
+
+		function scrollClass () {
+			var winH = $(window).height() - parseInt(target.css('padding-top')) * 2;
+			if (winH < modalH) {
+				target.addClass('is-scroll');
+			} else {
+				target.removeClass('is-scroll');
+			}
+		}
+
+		scrollClass();
+
+		$(window).resize(function () {
+			scrollClass();
+		});
+	}
