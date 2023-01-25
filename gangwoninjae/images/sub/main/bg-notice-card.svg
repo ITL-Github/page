@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="410" viewBox="0 0 580 410">
+    <defs>
+        <filter id="i1dqdunjea" x="0" y="0" width="580" height="410" filterUnits="userSpaceOnUse">
+            <feOffset dx="20" dy="20"/>
+            <feGaussianBlur stdDeviation="25" result="blur"/>
+            <feFlood flood-opacity=".161"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="csn650az5b" x="348" y="64" width="122" height="122" filterUnits="userSpaceOnUse">
+            <feOffset/>
+            <feGaussianBlur stdDeviation="7" result="blur-2"/>
+            <feFlood flood-opacity=".161"/>
+            <feComposite operator="in" in2="blur-2"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g data-name="그룹 495" transform="translate(-140 -1194)">
+        <g style="filter:url(#i1dqdunjea)">
+            <g data-name="board_BDMAIN03_20220805" transform="translate(195 1249)" style="stroke:#ededed;fill:#fff">
+                <rect width="430" height="260" rx="10" style="stroke:none"/>
+                <rect x=".5" y=".5" width="429" height="259" rx="9.5" style="fill:none"/>
+            </g>
+        </g>
+        <path data-name="board_BDMAIN03_20220805" d="M10 0h410a10 10 0 0 1 10 10v60H0V10A10 10 0 0 1 10 0z" transform="translate(195 1249)" style="fill:#f7f7f7"/>
+        <circle data-name="타원 36" cx="49" cy="49" r="49" transform="translate(500 1270)" style="fill:#f7f7f7"/>
+        <g style="filter:url(#csn650az5b)">
+            <circle data-name="타원 35" cx="40" cy="40" r="40" transform="translate(509 1279)" style="fill:#fff"/>
+        </g>
+    </g>
+</svg>
